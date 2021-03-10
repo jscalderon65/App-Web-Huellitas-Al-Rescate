@@ -3,10 +3,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 const PublicSwitch = () => {
   return (
     <Switch>
-      <Route exact path="/inicio" component={() => <div>Inicio</div>}/>
+      <Route exact path="/inicio" component={() => <h1>Inicio</h1>}/>
       <Redirect to="/inicio" />
     </Switch>
   );
 };
-
 export default PublicSwitch;

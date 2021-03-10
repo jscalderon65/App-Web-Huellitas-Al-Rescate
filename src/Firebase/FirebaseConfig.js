@@ -10,4 +10,4 @@ firebase.initializeApp({
   appId: "1:565121270196:web:2959efafbc6d1891b4b2e1",
   measurementId: "G-KH8ZZ4M4CX",
 });
-export {firebase};
+export { firebase };
