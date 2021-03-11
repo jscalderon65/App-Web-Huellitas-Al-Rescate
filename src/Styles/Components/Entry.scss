@@ -1,5 +1,6 @@
 .entry {
-  height: 100vh;
+  min-height: 100vh;
+  height:auto;
   background: $secondary;
   color: $whiteColor;
   padding: 50px;
@@ -20,11 +21,13 @@
 .secondary {
   background: $secondary;
 }
-#titulo {
+#titulo{
   text-align: center;
 }
-.white {
+.white{
   background: white;
   color: $secondary;
 }
+
+
 
