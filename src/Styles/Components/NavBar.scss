@@ -1,0 +1,103 @@
+header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: $primary;
+  box-sizing: border-box;
+  margin: 0;
+}
+nav {
+  float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+}
+nav ul li p {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+}
+.logo {
+  color: white;
+  height: 60px;
+  font-size: 30px;
+  line-height: 60px;
+  padding: 0 20px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  float: left;
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-all;
+}
+.clearfix {
+  clear: both;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  background: $hoverprimary;
+  color: white;
+  transition: 0.5s;
+}
+nav ul li p.active,
+nav ul li p:hover {
+  background: $hoverprimary;
+  color: white;
+  transition: 0.5s;
+}
+@media (max-width: 1200px) {
+  header {
+    margin: 0px;
+  }
+}
+@media (max-width: 858px) {
+  .menu-toggle {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0px;
+    background: black;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    color: $secondary;
+  }
+  .menu-toggle:before {
+    content: "A";
+  }
+  .menu-toggle.active:before {
+    content: "B";
+  }
+  .logo {
+    font-size: 15px;
+  }
+  nav {
+    display: none;
+  }
+  nav.active {
+    display: block;
+    width: 100%;
+  }
+
+  nav.active ul {
+    display: block;
+  }
+}
+

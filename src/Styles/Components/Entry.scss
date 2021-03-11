@@ -1,0 +1,30 @@
+.entry {
+  height: 100vh;
+  background: $secondary;
+  color: $whiteColor;
+  padding: 50px;
+  display:flex
+}
+.marco {
+  padding: 20px;
+  background: white;
+  border: 1px solid;
+  width: 90%;
+  padding-bottom: 70px;
+  margin: auto;
+  box-sizing: border-box;
+}
+.primary {
+  background: $primary;
+}
+.secondary {
+  background: $secondary;
+}
+#titulo {
+  text-align: center;
+}
+.white {
+  background: white;
+  color: $secondary;
+}
+

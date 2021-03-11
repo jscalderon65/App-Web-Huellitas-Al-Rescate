@@ -1,4 +1,5 @@
-@import './Base/base';
-@import './Base/settings';
-
+@import "./Base/base";
+@import "./Base/settings";
 //Components
+@import "./Components/NavBar.scss";
+@import "./Components/Entry.scss";
