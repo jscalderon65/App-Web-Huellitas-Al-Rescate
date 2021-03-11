@@ -3179,7 +3179,7 @@
     "babel-plugin-macros" "2.8.0"
     "babel-plugin-transform-react-remove-prop-types" "0.4.24"
 
-"babel-runtime@^6.26.0":
+"babel-runtime@^6.26.0", "babel-runtime@6.x":
   "integrity" "sha1-llxwWGaOgrVde/4E/yM3vItWR/4="
   "resolved" "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz"
   "version" "6.26.0"
@@ -9954,7 +9954,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.0.0", "prop-types@^15.6.2", "prop-types@^15.7.2":
+"prop-types@^15.0.0", "prop-types@^15.5.0", "prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -10100,7 +10100,7 @@
   "resolved" "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.2.tgz"
   "version" "1.2.2"
 
-"raf@^3.4.1":
+"raf@^3.4.1", "raf@~3.4.0":
   "integrity" "sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA=="
   "resolved" "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz"
   "version" "3.4.1"
@@ -10147,6 +10147,18 @@
     "dom-align" "^1.7.0"
     "rc-util" "^5.3.0"
     "resize-observer-polyfill" "^1.5.1"
+
+"rc-banner-anim@^2.4.5":
+  "integrity" "sha512-OPnzSKj1k2nASy+bIPdEa+Mwf7Fy7n1Y8thH2Yw8sgXRNE3b7tHEj1Q0TjphcQpL98eZHcZjK01CR5AKcf+Trg=="
+  "resolved" "https://registry.npmjs.org/rc-banner-anim/-/rc-banner-anim-2.4.5.tgz"
+  "version" "2.4.5"
+  dependencies:
+    "babel-runtime" "6.x"
+    "prop-types" "^15.5.0"
+    "rc-tween-one" "^2.4.0"
+    "react-lifecycles-compat" "^3.0.4"
+    "style-utils" "~0.2.0"
+    "tween-functions" "1.x"
 
 "rc-cascader@~1.4.0":
   "integrity" "sha512-JVuLGrSi+3G8DZyPvlKlGVWJjhoi9NTz6REHIgRspa5WnznRkKGm2ejb0jJtz0m2IL8Q9BG4ZA2sXuqAu71ltQ=="
@@ -10453,6 +10465,18 @@
     "rc-motion" "^2.0.0"
     "rc-util" "^5.5.0"
 
+"rc-tween-one@^2.4.0", "rc-tween-one@^2.7.3":
+  "integrity" "sha512-n4OPRLO6VMZHj61unq5KKxHMMfBz52bxob94fN3U5M9GqFg3H+T3TXnpHPnAK+cq/xBGo70ik2vB4Fpjo/txcA=="
+  "resolved" "https://registry.npmjs.org/rc-tween-one/-/rc-tween-one-2.7.3.tgz"
+  "version" "2.7.3"
+  dependencies:
+    "babel-runtime" "6.x"
+    "prop-types" "^15.6.1"
+    "raf" "~3.4.0"
+    "react-lifecycles-compat" "^3.0.4"
+    "style-utils" "~0.2.0"
+    "tween-functions" "~1.2.0"
+
 "rc-upload@~4.0.0-alpha.6":
   "integrity" "sha512-h7iLt22U0C2ObpqTU7MDoAV/FDwHTUEFjMd6uidA4ipoJ7gP7C74gOQOtl5OPQTVUDATUndnSAt9uyC1znlo9A=="
   "resolved" "https://registry.npmjs.org/rc-upload/-/rc-upload-4.0.1.tgz"
@@ -10545,6 +10569,11 @@
   "integrity" "sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA=="
   "resolved" "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
+
+"react-lifecycles-compat@^3.0.4":
+  "integrity" "sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA=="
+  "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
+  "version" "3.0.4"
 
 "react-redux@^7.2.2":
   "integrity" "sha512-8+CQ1EvIVFkYL/vu6Olo7JFLWop1qRUeb46sGtIMDCSpgwPQq8fPLpirIB0iTqFe9XYEFPHssdX8/UwN6pAkEA=="
@@ -12064,6 +12093,11 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
+"style-utils@~0.2.0":
+  "integrity" "sha512-eKRIfWnUSdBqe2ko+qisUwBSlfWpHru89geRqzmScpDhkPW1ksmE04d//nDcXeF+TVK5cnBG90mMmHgxyxXleQ=="
+  "resolved" "https://registry.npmjs.org/style-utils/-/style-utils-0.2.1.tgz"
+  "version" "0.2.1"
+
 "stylehacks@^4.0.0":
   "integrity" "sha512-7GlLk9JwlElY4Y6a/rmbH2MhVlTyVmiJd1PfTCqFaIBEGMYNsrO/v3SeGTdhBThLg4Z+NbOk/qFMwCa+J+3p/g=="
   "resolved" "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.3.tgz"
@@ -12443,6 +12477,11 @@
   "version" "0.6.0"
   dependencies:
     "safe-buffer" "^5.0.1"
+
+"tween-functions@~1.2.0", "tween-functions@1.x":
+  "integrity" "sha1-GuOlDnxguz3vd06scHrLynO7w/8="
+  "resolved" "https://registry.npmjs.org/tween-functions/-/tween-functions-1.2.0.tgz"
+  "version" "1.2.0"
 
 "tweetnacl@^0.14.3", "tweetnacl@~0.14.0":
   "integrity" "sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q="
