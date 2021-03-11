@@ -7,6 +7,7 @@ import {
   MailOutlined,
   YoutubeOutlined,
   PushpinOutlined,
+  GithubOutlined 
 } from "@ant-design/icons";
 import { Typography } from "antd";
 const Footer = () => {
@@ -60,9 +61,9 @@ const Footer = () => {
           </a>
           <a
             className="a-styles"
-            href="https://ant.design/components/icon/"
             target="_blank"
             rel="noreferrer"
+            href="https://ant.design/components/icon/"
           >
             <YoutubeOutlined style={{ fontSize: "40px" }} />
           </a>
@@ -82,7 +83,11 @@ const Footer = () => {
           <MailOutlined style={{ fontSize: "30px" }} />
           ejemplo@ejemplo.com
         </div>
-        <br />
+      </div>
+      <div>
+        <Title level={3} style={{ color: "white", textAlign: "center" }}>
+          ¿Dónde nos úbicamos?
+        </Title>
         <div className="contact-item">
           <PushpinOutlined style={{ fontSize: "30px" }} />
           calle 80 c sur #78-20
@@ -97,7 +102,40 @@ const Footer = () => {
         ></iframe>
       </div>
       <div className="rights-reserved">
-        <p>Todos los derechos reservados 2021</p>
+        <div>
+
+         © 2021
+          <a
+            className="a-styles"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/JairPrada"
+          >
+          <GithubOutlined />
+
+            JairPrada
+          </a>
+          <a
+            className="a-styles"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/jscalderon65"
+          >
+            <GithubOutlined />
+
+            SebastianCalderon
+          </a>
+          <a
+            className="a-styles"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/GeralPinzon"
+          >
+            <GithubOutlined />
+
+            Geralpinzon
+          </a>
+        </div>
       </div>
     </div>
   );
