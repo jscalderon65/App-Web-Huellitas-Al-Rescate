@@ -111,7 +111,7 @@ const Footer = () => {
             rel="noreferrer"
             href="https://github.com/JairPrada"
           >
-          <GithubOutlined />
+          <GithubOutlined style={{ fontSize: "20px" }}/>
 
             JairPrada
           </a>
@@ -121,7 +121,7 @@ const Footer = () => {
             rel="noreferrer"
             href="https://github.com/jscalderon65"
           >
-            <GithubOutlined />
+            <GithubOutlined style={{ fontSize: "20px" }} />
 
             SebastianCalderon
           </a>
@@ -131,7 +131,7 @@ const Footer = () => {
             rel="noreferrer"
             href="https://github.com/GeralPinzon"
           >
-            <GithubOutlined />
+            <GithubOutlined style={{ fontSize: "20px" }}/>
 
             Geralpinzon
           </a>
