@@ -1,4 +1,5 @@
 import React from "react";
+import {googleAuth} from '../../Firebase/FirebaseAuth';
 import { Link } from "react-router-dom";
 import {
   FacebookOutlined,
@@ -7,9 +8,10 @@ import {
   MailOutlined,
   YoutubeOutlined,
   PushpinOutlined,
-  GithubOutlined 
+  GithubOutlined,
+  SettingOutlined 
 } from "@ant-design/icons";
-import { Typography } from "antd";
+import { Typography, Button} from "antd";
 const Footer = () => {
   const { Title } = Typography;
   return (
@@ -99,10 +101,11 @@ const Footer = () => {
           className="map-styles"
           loading="lazy"
         ></iframe>
+        <br/>
+        <Button shape="circle" onClick={googleAuth}><SettingOutlined /></Button>
       </div>
       <div className="rights-reserved">
         <div>
-
          © 2021
           <a
             className="a-styles"
