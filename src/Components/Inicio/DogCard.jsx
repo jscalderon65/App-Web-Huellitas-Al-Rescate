@@ -19,10 +19,11 @@ const DogCard = ({
     <div className="dog-card">
       <div className="dog-card-image">
         <Image
-          style={{ borderRadius: "100%", width: "250px", height: "250px" }}
+          style={{borderRadius: "100%", width: "250px", height: "250px" }}
           src={src}
           alt="picsum"
-        />
+/*        fallback
+ */        />
       </div>
       <br />
       <div className="dog-card-content">
@@ -30,11 +31,11 @@ const DogCard = ({
           <Title style={{ color: "#423834" }}>{name}</Title>
         </Divider>
         <br />
+        <div style={{ textAlign: "center" }}>
         <p style={{ textAlign: "center", margin: "auto" }}>
           <b>{ExternalDescription}</b>
         </p>
-        <br />
-        <div style={{ textAlign: "center", padding: "10px" }}>
+        <br/>
           <Button
             id="profile-buttons"
             style={{ width: "40%" }}

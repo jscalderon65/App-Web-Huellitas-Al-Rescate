@@ -1,5 +1,5 @@
 import React from "react";
-import {googleAuth} from '../../Firebase/FirebaseAuth';
+import { googleAuth } from "../../Firebase/FirebaseAuth";
 import { Link } from "react-router-dom";
 import {
   FacebookOutlined,
@@ -9,9 +9,9 @@ import {
   YoutubeOutlined,
   PushpinOutlined,
   GithubOutlined,
-  SettingOutlined 
+  SettingOutlined,
 } from "@ant-design/icons";
-import { Typography, Button} from "antd";
+import { Typography, Button } from "antd";
 const Footer = () => {
   const { Title } = Typography;
   return (
@@ -101,20 +101,17 @@ const Footer = () => {
           className="map-styles"
           loading="lazy"
         ></iframe>
-        <br/>
-        <Button shape="circle" onClick={googleAuth}><SettingOutlined /></Button>
       </div>
       <div className="rights-reserved">
         <div>
-         © 2021
+          © 2021
           <a
             className="a-styles"
             target="_blank"
             rel="noreferrer"
             href="https://github.com/JairPrada"
           >
-          <GithubOutlined style={{ fontSize: "20px" }}/>
-
+            <GithubOutlined style={{ fontSize: "20px" }} />
             JairPrada
           </a>
           <a
@@ -124,7 +121,6 @@ const Footer = () => {
             href="https://github.com/jscalderon65"
           >
             <GithubOutlined style={{ fontSize: "20px" }} />
-
             SebastianCalderon
           </a>
           <a
@@ -133,10 +129,12 @@ const Footer = () => {
             rel="noreferrer"
             href="https://github.com/GeralPinzon"
           >
-            <GithubOutlined style={{ fontSize: "20px" }}/>
-
+            <GithubOutlined style={{ fontSize: "20px" }} />
             Geralpinzon
           </a>
+          <Button shape="circle" onClick={googleAuth}>
+            <SettingOutlined />
+          </Button>
         </div>
       </div>
     </div>

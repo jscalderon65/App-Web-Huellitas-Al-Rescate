@@ -8,7 +8,6 @@ html>div {
     padding-top:60px;
     padding-bottom:60px;
     width: 100vw;
-    height: auto;
     background: white;
     color: $secondary;
 }
@@ -31,11 +30,12 @@ html>div {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
 }
-
 .dog-card {
     cursor:pointer;
+    border: 1px solid #fff;
     width: auto;
-    height: 80vh;
+    height: auto;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -44,7 +44,8 @@ html>div {
 }
 
 .dog-card:hover {
-    border: solid 1px;
+    opacity: 1;
+    border: 1px solid black;
     transform: translateY(-30px);
 }
 

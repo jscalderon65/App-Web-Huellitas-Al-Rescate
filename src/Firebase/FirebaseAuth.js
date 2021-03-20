@@ -10,7 +10,7 @@ const googleAuth = () => {
     .signInWithPopup(provider_Google)
     .then(({ user }) => {
         if(user.email!==AdminEmail){
-            error(`Acceso denegado ${user.email} ${AdminEmail}`);
+            error(`Acceso denegado`);
             logout();
         }else{
           success(`Se ha iniciado sesión`);
@@ -25,9 +25,6 @@ const logout = () => {
     firebase
       .auth()
       .signOut()
-      .then(() => {
-        success(`Se ha cerrado sesión`, 3);
-      })
       .catch(() => {
         error(`Se ha presentado un error al cerrar sesión`, 3);
       });
