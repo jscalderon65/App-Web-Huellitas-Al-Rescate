@@ -1,0 +1,29 @@
+.card-c {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: -50px;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.card-course-content {
+  width: 100%;
+  height: 100%;
+  background: $primaryTransparent;
+  margin-left: 100%;
+  transition: 0.5s ease;
+}
+.card-c:hover .card-course-content {
+  margin-left: 0px;
+}
+.card-c:hover{
+  background-position-x: 0px;
+}
+.contente {
+  width: 100%;
+  height: 250px;
+  padding: 25px;
+}
+.contente .button {
+  margin-top: 20px;
+}

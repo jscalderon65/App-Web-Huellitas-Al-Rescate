@@ -17,8 +17,8 @@ const NavBar = ({ history }) => {
                 <nav id="n">
                     <ul>
                         <li><strong><NavLink to="/inicio" activeClassName="active" >INICIO</NavLink></strong></li>
-                        <li><strong><NavLink to="/adopciones" activeClassName="active">ADOPCIONES</NavLink></strong></li>
                         <li><strong><NavLink to="/estudiantes" activeClassName="active">ESTUDIANTES</NavLink></strong></li>
+                        <li><strong><NavLink to="/cursos" activeClassName="active">CURSOS</NavLink></strong></li>
                     </ul>
                 </nav>
                 <div className="clearfix" />
