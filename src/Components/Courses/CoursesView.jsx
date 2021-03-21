@@ -5,12 +5,11 @@ import CardCourse from './CoursesComponents/CardCourse';
 
 import data from './data';
 
-const CoursesView = (props) => {
-
+const CoursesView = () => {
     return (
         <Fragment>
             <CarrouselCourses />
-            <Typography.Title level={1} style={{ marginTop: "50px" }} align="center">Cursos Disponibles</Typography.Title>
+            <Typography.Title level={1} style={{ marginTop: "50px" }} align="center">Cursos Disponibles ({data.length})</Typography.Title>
             <div style={{ margin: "50px 40px" }}>
                 <Row gutter={[48, 48]} justify="center" align="middle">
                     {data.map((elemento) => {
@@ -20,10 +19,8 @@ const CoursesView = (props) => {
                             </Col>
                         )
                     })}
-
                 </Row>
             </div>
-
         </Fragment>
     )
 }

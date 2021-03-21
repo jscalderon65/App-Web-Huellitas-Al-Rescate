@@ -1,7 +1,7 @@
 const data = [
     {
         id: "1",
-        titulo: "Curso 1",
+        titulo: "Superacion personal con animales",
         descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio impedit nam enim ad porro cupiditate nesciunt, esse fugiat! Velit doloribus eius quibusdam assumenda impedit minima enim quis esse qui dolorem.",
         img: "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         clases: ["Introduccion", "Analisis de Procesos", "Revision Metodologia", "Creacion", "Implementacion", "Manipulacion de datos", "Interpretacion", "Redaccion final"]

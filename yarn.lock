@@ -14,7 +14,7 @@
   "resolved" "https://registry.npmjs.org/@ant-design/icons-svg/-/icons-svg-4.1.0.tgz"
   "version" "4.1.0"
 
-"@ant-design/icons@^4.5.0":
+"@ant-design/icons@^4.4.0", "@ant-design/icons@^4.5.0":
   "integrity" "sha512-ZAKJcmr4DBV3NWr8wm2dCxNKN4eFrX+qCaPsuFejP6FRsf+m5OKxvCVi9bSp1lmKWeOI5yECAx5s0uFm4QHuPw=="
   "resolved" "https://registry.npmjs.org/@ant-design/icons/-/icons-4.5.0.tgz"
   "version" "4.5.0"
@@ -2692,7 +2692,7 @@
   dependencies:
     "color-convert" "^2.0.1"
 
-"antd@^4.13.1":
+"antd@^4.11.2", "antd@^4.13.1":
   "integrity" "sha512-KaveTRGKOFrbas3FO0ktXaZrSMDpDWz3FpuLbafV7R973BNz2yo+IG8ia2KPEfpRtGYUvpnKlDUNQZWhotoYhQ=="
   "resolved" "https://registry.npmjs.org/antd/-/antd-4.13.1.tgz"
   "version" "4.13.1"
@@ -8378,6 +8378,19 @@
     "dns-packet" "^1.3.1"
     "thunky" "^1.0.2"
 
+"my-comment-box-app@^1.1.3":
+  "integrity" "sha512-g5ZgPCdNrvgOZv+7TmSmVksQdv0O/V0Vpkw5thc1TyXSSkpNoYsPuSeJ/QlNSRNrZOAZ/f67cQar8254jOfwEw=="
+  "resolved" "https://registry.npmjs.org/my-comment-box-app/-/my-comment-box-app-1.1.3.tgz"
+  "version" "1.1.3"
+  dependencies:
+    "@ant-design/icons" "^4.4.0"
+    "antd" "^4.11.2"
+    "my-customhook-collection" "^1.3.2"
+    "react-google-button" "^0.7.2"
+    "react-redux" "^7.2.2"
+    "redux" "^4.0.5"
+    "redux-devtools-extension" "^2.13.8"
+
 "my-customhook-collection@^1.3.2":
   "integrity" "sha512-+1KynRtM7lGUahFN3pxOF1A8jP6s5eXVobOvNzMNFVV2CWtQsHMUgldpUHhtTEc4+FhokINe2MOMjcj+0yKRYA=="
   "resolved" "https://registry.npmjs.org/my-customhook-collection/-/my-customhook-collection-1.3.2.tgz"
@@ -10574,6 +10587,13 @@
   "resolved" "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz"
   "version" "6.0.9"
 
+"react-google-button@^0.7.2":
+  "integrity" "sha512-LPIqU2hIlc212kqks8MtKjRstquVkP3SIjxlK5B1nIfg2R7YqSusJAxZUkJA5dv/z6QeSuGyI9ujwV/VWMTyAA=="
+  "resolved" "https://registry.npmjs.org/react-google-button/-/react-google-button-0.7.2.tgz"
+  "version" "0.7.2"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "react-is@^16.12.0", "react-is@^16.13.1", "react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz"
@@ -10840,7 +10860,7 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
-"redux-devtools-extension@^2.13.9":
+"redux-devtools-extension@^2.13.8", "redux-devtools-extension@^2.13.9":
   "integrity" "sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A=="
   "resolved" "https://registry.npmjs.org/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz"
   "version" "2.13.9"
