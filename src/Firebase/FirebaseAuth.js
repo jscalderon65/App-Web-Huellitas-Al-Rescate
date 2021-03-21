@@ -2,6 +2,18 @@ import { firebase } from "./FirebaseConfig";
 import { message } from "antd";
 import "antd/dist/antd.css";
 const { success, error } = message;
+const UserGoogleAuth =()=>{
+  let provider_Google = new firebase.auth.GoogleAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider_Google)
+    .then(({ user }) => {
+      success(`${user.displayName} ha iniciado sesión`);
+      })
+    .catch(() => {
+      error(`Se ha presentado un error al inicio de sesión`);
+    });
+}
 const googleAuth = () => {
   let provider_Google = new firebase.auth.GoogleAuthProvider();
   const AdminEmail = "huellitasparasiempreprae@gmail.com";
@@ -29,4 +41,4 @@ const logout = () => {
         error(`Se ha presentado un error al cerrar sesión`, 3);
       });
   };
-export {googleAuth,logout}
+export {googleAuth,logout,UserGoogleAuth}

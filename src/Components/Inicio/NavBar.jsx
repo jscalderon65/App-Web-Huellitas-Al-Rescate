@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 const NavBar = ({ history }) => {
 
     const add = () => {
@@ -13,7 +13,7 @@ const NavBar = ({ history }) => {
         <Fragment>
             <header>
                 <div className="menu-toggle" id="m" onClick={add} />
-                <a href="/" className="logo">HUELLITAS PARA SIEMPRE</a>
+                <Link to="/" className="logo">HUELLITAS PARA SIEMPRE</Link>
                 <nav id="n">
                     <ul>
                         <li><strong><NavLink to="/inicio" activeClassName="active" >INICIO</NavLink></strong></li>

@@ -8,7 +8,13 @@ const MainRouter = () => {
   const [isOn] = useFirebaseUser(firebase);
   return (
     <BrowserRouter>
-      <div>{isOn ? <PrivateSwitch UserInfo={isOn} /> : <PublicSwitch />}</div>
+      <div>
+        {isOn && isOn.email === "huellitasparasiempreprae@gmail.com" ? (
+          <PrivateSwitch UserInfo={isOn} />
+        ) : (
+          <PublicSwitch />
+        )}
+      </div>
     </BrowserRouter>
   );
 };
