@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Button, Col, Rate, Row, Typography } from 'antd';
+import {Link} from 'react-router-dom';
 const BannerCourse = ({ title = "Titulo", description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quos non consequuntur quidem consectetur deserunt dolores ab numquam, pariatur adipisci!", img="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?cs=srgb&dl=pexels-pixabay-207691.jpg&fm=jpg" }) => {
     const { Title, Text } = Typography;
     return (
@@ -14,7 +15,11 @@ const BannerCourse = ({ title = "Titulo", description="Lorem ipsum dolor sit ame
                         <Rate disabled defaultValue={4.5} />
                         <br />
                     </div>
-                    <Button type="primary" style={{ marginTop: "20px" }}>Empezar el Curso</Button>
+                    <Link to="/cursos">                    
+                    <Button type="primary" style={{ marginTop: "20px" }} danger>Volver</Button>
+                    </Link>
+                    <br/>
+                    <Button type="primary" style={{ marginTop: "20px" }}>Ir al curso</Button>
                 </Col>
                 <Col xs={20} md={8}>
                     <img src={img} width="100%" alt="" />

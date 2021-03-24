@@ -7,17 +7,21 @@ header {
   box-sizing: border-box;
   margin: 0;
 }
+
 nav {
   float: right;
 }
+
 nav ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
-nav ul li { 
+
+nav ul li {
   list-style: none;
 }
+
 nav ul li a {
   display: block;
   margin: 10px 0;
@@ -25,6 +29,7 @@ nav ul li a {
   text-decoration: none;
   color: white;
 }
+
 nav ul li p {
   display: block;
   margin: 10px 0;
@@ -32,6 +37,7 @@ nav ul li p {
   text-decoration: none;
   color: white;
 }
+
 .logo {
   color: white;
   height: 60px;
@@ -45,27 +51,33 @@ nav ul li p {
   font-weight: 700;
   text-decoration: none;
   word-break: break-all;
+  transition: color 0.5s;
 }
+
 .clearfix {
   clear: both;
 }
+
 nav ul li a.active,
 nav ul li a:hover {
   background: $hoverprimary;
   color: white;
   transition: 0.5s;
 }
+
 nav ul li p.active,
 nav ul li p:hover {
   background: $hoverprimary;
   color: white;
   transition: 0.5s;
 }
+
 @media (max-width: 1200px) {
   header {
     margin: 0px;
   }
 }
+
 @media (max-width: 858px) {
   .menu-toggle {
     display: block;
@@ -78,19 +90,31 @@ nav ul li p:hover {
     text-align: center;
     font-size: 30px;
     color: $secondary;
+    background: $primary;
   }
+
   .menu-toggle:before {
-    content: "A";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c9";
+    color: white;
   }
+
   .menu-toggle.active:before {
-    content: "B";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+    color: white;
   }
+
   .logo {
     font-size: 15px;
   }
+
   nav {
     display: none;
   }
+
   nav.active {
     display: block;
     width: 100%;
@@ -100,9 +124,12 @@ nav ul li p:hover {
     display: block;
   }
 }
-.navbar-dashboard{
-  background-color:#20232A;
-  padding:20px;
+.logo:hover {
+  color: $secondary;
+}
+.navbar-dashboard {
+  background-color: #20232A;
+  padding: 20px;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }

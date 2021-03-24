@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import {logout} from '../../Firebase/FirebaseAuth'
 import { Button, Drawer} from "antd";
 import { MenuUnfoldOutlined} from "@ant-design/icons";
+import {Link} from 'react-router-dom'
 const NavBarDashBoard = ({ history }) => {
     
   const [visible, setVisible] = useState(false);
@@ -28,9 +29,11 @@ const NavBarDashBoard = ({ history }) => {
         onClose={onClose}
         visible={visible}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <Link to="/dashboard/comentarios">comentarios</Link>
+        <br/>
+        <Link to="/dashboard/cursos">cursos</Link>
+        <br/>
+        <Link to="/dashboard/estudiantes">estudiantes</Link>
       </Drawer>
     </Fragment>
   );

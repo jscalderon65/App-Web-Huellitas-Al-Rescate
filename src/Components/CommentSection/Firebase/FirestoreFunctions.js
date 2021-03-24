@@ -73,9 +73,9 @@ const AddReply = (
 ) => {
   const { uid, email, displayName, photoURL } = userOnlineInfo;
   const CreationDate = new Date();
-  const Creation = `${CreationDate.getDate()} de ${
+  const Creation = `A las ${CreationDate.getHours()}:${CreationDate.getMinutes()}, el dia ${CreationDate.getDate()} de ${
     Month[CreationDate.getMonth()]
-  } del ${CreationDate.getFullYear()}, a las ${CreationDate.getHours()}:${CreationDate.getMinutes()} horas`;
+  } del ${CreationDate.getFullYear()}`;
   let DocumentRef = firebase.firestore().collection(Store.getState().CollectionName).doc(DocId);
   DocumentRef.update({
     Replies: [

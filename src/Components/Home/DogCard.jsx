@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import { Image, Typography, Divider } from "antd";
-const { Title } = Typography;
 const DogCard = ({ 
   src, 
   name, 
   ExternalDescription, 
   InternalDescription 
-  }) => {
-  
+}) => {
+  const { Title } = Typography;
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {

@@ -132,6 +132,7 @@ const Footer = () => {
             <GithubOutlined style={{ fontSize: "20px" }} />
             Geralpinzon
           </a>
+          <br/>
           <Button shape="circle" onClick={googleAuth}>
             <SettingOutlined />
           </Button>

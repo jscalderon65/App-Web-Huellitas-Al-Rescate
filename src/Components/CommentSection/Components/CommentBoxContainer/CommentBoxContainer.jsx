@@ -18,8 +18,8 @@ const CommentBoxContainer = ({ CollectionName, GetCollection, firebase }) => {
   const refColl = db.collection(Store.getState().CollectionName);
   const [comments] = useOnSnapshotCollection(refColl);
   const [UserInfo] = useFirebaseUser(firebase);
-  
   return (
+    
     <div
       style={{
         padding: "20px"
@@ -29,7 +29,8 @@ const CommentBoxContainer = ({ CollectionName, GetCollection, firebase }) => {
         <AddCommentComponent FirebaseApp={firebase} UserInfo={UserInfo} />
       )}
       {comments &&
-        comments.reverse().map((comment) => (
+      <>
+       { comments.reverse().map((comment) => (
           <CommentComponent
             FirebaseApp={firebase}
             key={comment.id}
@@ -48,6 +49,8 @@ const CommentBoxContainer = ({ CollectionName, GetCollection, firebase }) => {
             ))}
           </CommentComponent>
         ))}
+      </>
+      }
       <BackTop />
     </div>
   );

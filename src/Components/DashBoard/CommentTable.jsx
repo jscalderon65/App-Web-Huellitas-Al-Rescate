@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Table, message} from "antd";
+import { Button, Table, message } from "antd";
 import "antd/dist/antd.css";
-const {error,success}=message;
-const CommentTable = ({collection="comments"}) => {
+const { error, success } = message;
+const CommentTable = ({ collection = "comments" }) => {
   const db = firebase.firestore();
   const refColl = db.collection(collection);
   const [Data] = useOnSnapshotCollection(refColl);
@@ -49,7 +49,11 @@ const CommentTable = ({collection="comments"}) => {
               action: (
                 <Button
                   type="primary"
-                  style={{display:"flex",justifyContent:"center",alignItems: "center"}}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
                   size="large"
                   icon={<DeleteOutlined />}
                   onClick={() => deleteComment(collection, curr)}
@@ -61,12 +65,12 @@ const CommentTable = ({collection="comments"}) => {
           ];
         }, [])
       );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Data]);
   return (
-   
-      <div>
-        {Data && <Table columns={columns} dataSource={newData} size="small" />}
-      </div>
+    <div>
+      {Data && <Table columns={columns} dataSource={newData} size="small" />}
+    </div>
   );
 };
 export default CommentTable;

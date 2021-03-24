@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { useForm, useMediaQuery} from "my-customhook-collection";
+import React,{Fragment, useRef, useState } from "react";
+import { useForm, useMediaQuery } from "my-customhook-collection";
 import {
   Comment,
   Tooltip,
@@ -122,10 +122,10 @@ const ReplyComponent = ({
       author={<Title level={5}>{displayName}</Title>}
       avatar={<Image src={photoURL} alt={displayName} />}
       content={
-        <>
+        <Fragment>
           <div ref={EditScrollHandler} />
           {SwitchEdit ? (
-            <>
+            <Fragment>
               <Input
                 name="EditInputValue"
                 size="large"
@@ -144,24 +144,24 @@ const ReplyComponent = ({
                     <Button icon={<SaveOutlined />} onClick={EditHandler}>Guardar cambios</Button>
                   )
                 : ""}
-            </>
+            </Fragment>
           ) : (
             <p>
               <b>Respondiendo a @{ReplyTo} </b>
               {Reply}
             </p>
           )}
-        </>
+        </Fragment>
       }
       datetime={
-        <Tooltip  title={Creation}>
+        <Tooltip title={Creation}>
           <span>{mediaQuery?"Fecha de publicación":Creation}</span>
         </Tooltip>
       }
     >
       <div ref={ReplyScrollHandler} />
       {SwitchReply && (
-        <>
+        <Fragment>
           <Input.TextArea
             onChange={HandleInputReplyChange}
             name={"ReplyInputValue"}
@@ -175,9 +175,9 @@ const ReplyComponent = ({
             Cancelar
           </Button>
           {ReplyInputValue && <Button icon={<SendOutlined />} onClick={ReplyHandler}>Responder</Button>}
-        </>
+        </Fragment>
       )}
-      <div ref={ReplyScrollHandler} style={{scrollMarginTop:"50px"}} />
+      <div ref={ReplyScrollHandler} style={{scrollMarginTop:"50px"}}/>
     </Comment>
   );
 };

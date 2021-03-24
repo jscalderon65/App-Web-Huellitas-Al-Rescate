@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React,{ memo} from "react";
 import { useForm } from "my-customhook-collection";
 import { AddComment } from "../../Firebase/FirestoreFunctions";
 import { message, Input, Button, Divider } from "antd";

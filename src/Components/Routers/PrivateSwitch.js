@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarDashBoard from "../DashBoard/NavbarDashBoard";
-import CommentTable from '../DashBoard/CommentTable'
+/* import {CommentTable} from '../index.js' */
 import { Switch, Route, Redirect } from "react-router-dom";
 import 'antd/dist/antd.css';
 const PrivateSwitch = ({UserInfo}) => {
@@ -8,10 +8,9 @@ const PrivateSwitch = ({UserInfo}) => {
     <>
     <NavbarDashBoard/>
     <Switch>
-      <Route exact path="/dashboard" component={() => <div>
-        <CommentTable collection={"Comments of 1"}/>
-        <CommentTable collection={"Comments of 3"}/>
-        </div>} />
+      <Route exact path="/dashboard/comentarios" component={() => <div>Comentarios</div>} />
+      <Route exact path="/dashboard/cursos" component={() => <div>Cursos</div>} />
+      <Route exact path="/dashboard/estudiantes" component={() => <div>Estudiantes</div>} />
       <Redirect to="/dashboard" />
     </Switch>
     </>

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React,{Fragment,useState, useRef } from "react";
 import { useForm } from "my-customhook-collection";
 import {
   Input,
@@ -128,11 +128,11 @@ const CommentComponent = ({
       author={<Title level={5}>{displayName}</Title>}
       avatar={<Image src={photoURL} alt={displayName} />}
       content={
-        <>
+        <Fragment>
           <div ref={EditScrollHandler} />
           <p>
             {SwitchEdit ? (
-              <>
+              <Fragment>
                 <Input
                   name="EditInputValue"
                   size="large"
@@ -153,12 +153,12 @@ const CommentComponent = ({
                       </Button>
                     )
                   : ""}
-              </>
+              </Fragment>
             ) : (
               CommentContent
             )}
           </p>
-        </>
+        </Fragment>
       }
       datetime={
         <Tooltip title={Creation}>
@@ -168,7 +168,7 @@ const CommentComponent = ({
     >
       <div ref={ReplyScrollHandler} style={{scrollMarginTop:"50px"}}/>
       {SwitchReply && (
-        <>
+        <Fragment>
           <Input.TextArea
             onChange={HandleInputReplyChange}
             name={"ReplyInputValue"}
@@ -186,7 +186,7 @@ const CommentComponent = ({
               Responder
             </Button>
           )}
-        </>
+        </Fragment>
       )}
       {/* {JSON.stringify(Replies,null,4)} */}
       {Replies.length > 0 ? (
