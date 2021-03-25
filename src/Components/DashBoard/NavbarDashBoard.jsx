@@ -29,11 +29,11 @@ const NavBarDashBoard = ({ history }) => {
         onClose={onClose}
         visible={visible}
       >
-        <Link to="/dashboard/comentarios">comentarios</Link>
+        <Link onClick={onClose} to="/dashboard/comentarios">comentarios</Link>
         <br/>
-        <Link to="/dashboard/cursos">cursos</Link>
+        <Link onClick={onClose} to="/dashboard/cursos">cursos</Link>
         <br/>
-        <Link to="/dashboard/estudiantes">estudiantes</Link>
+        <Link onClick={onClose} to="/dashboard/estudiantes">estudiantes</Link>
       </Drawer>
     </Fragment>
   );
