@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { firebase } from "../../Firebase/FirebaseConfig";
+import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Table, message } from "antd";
+import {
+  Button,
+  Table,
+  message,
+  Spin,
+  Typography,
+  Divider,
+  Popconfirm,
+} from "antd";
 import "antd/dist/antd.css";
 const { error, success } = message;
-const CommentTable = ({ collection = "comments" }) => {
+const CommentTable = ({ collection = "comments", title }) => {
   const db = firebase.firestore();
   const refColl = db.collection(collection);
   const [Data] = useOnSnapshotCollection(refColl);
@@ -47,19 +55,25 @@ const CommentTable = ({ collection = "comments" }) => {
               name: curr.userInfo.displayName,
               content: curr.CommentContent,
               action: (
-                <Button
-                  type="primary"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  size="large"
-                  icon={<DeleteOutlined />}
-                  onClick={() => deleteComment(collection, curr)}
-                  shape="circle"
-                  danger
-                />
+                <Popconfirm
+                  title={"¿Deseas eliminar de forma permanente este comentario?"}
+                  onConfirm={() => deleteComment(collection, curr)}
+                  okText="Si"
+                  cancelText="No"
+                >
+                  <Button
+                    type="primary"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                    size="large"
+                    icon={<DeleteOutlined />}
+                    shape="circle"
+                    danger
+                  />
+                </Popconfirm>
               ),
             },
           ];
@@ -69,7 +83,19 @@ const CommentTable = ({ collection = "comments" }) => {
   }, [Data]);
   return (
     <div>
-      {Data && <Table columns={columns} dataSource={newData} size="small" />}
+      {Data ? (
+        <div className="comments-dashboard-table">
+          <Typography.Title style={{ textAlign: "left" }} level={3}>
+            Comentarios de: {title}
+          </Typography.Title>
+          <Divider />
+          <Table columns={columns} dataSource={newData} size="small" />
+        </div>
+      ) : (
+        <div className="comments-dashboard-spin">
+          <Spin size="large" />
+        </div>
+      )}
     </div>
   );
 };

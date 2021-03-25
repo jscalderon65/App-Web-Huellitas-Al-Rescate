@@ -133,3 +133,41 @@ nav ul li p:hover {
   display: flex;
   justify-content: space-between;
 }
+.footer-dashboard{
+  height:auto;
+  color:white;
+  background-color: #20232A;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.f-styles {
+  width:15%;
+  display: flex;
+  justify-content:space-around;
+  padding:10px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.f-styles:hover {
+  color: grey;
+  
+}
+@media( max-width:600px){
+  .footer-dashboard{
+    color:white;
+    background-color: #20232A;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  } 
+  .f-styles {
+    width:60%;
+    justify-content:space-between;
+  }
+}

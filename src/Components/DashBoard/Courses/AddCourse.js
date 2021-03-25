@@ -6,8 +6,8 @@ const AddCourse = () => {
   firebase
     .firestore()
     .collection(`Cursos`)
-    .doc(JSON.stringify(new Date()))
-    .set({
+    .add({
+      fecha: new Date(),
       titulo: `curso ${Math.random()} `,
       descripcion:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio impedit nam enim ad porro cupiditate nesciunt, esse fugiat! Velit doloribus eius quibusdam assumenda impedit minima enim quis esse qui dolorem.",
@@ -22,7 +22,21 @@ const AddCourse = () => {
       error("Error al crear curso");
     });
 };
-const deleteCourse = (id) => {
+const deleteComment = (id, doc) => {
+  firebase
+    .firestore()
+    .collection(id)
+    .doc(doc)
+    .delete()
+    .catch(() => {
+      error("error al eliminar el comentario");
+    });
+};
+const DeleteAllComments = (id, arr) => {
+  arr.map(async (item) => await deleteComment(id, item.id));
+};
+
+const deleteCourse = (id, arr) => {
   firebase
     .firestore()
     .collection("Cursos")
@@ -30,19 +44,13 @@ const deleteCourse = (id) => {
     .delete()
     .then(() => {
       success("Curso eliminado correctamente");
-      firebase.firestore()
-      .collection("Cursos")
-      .doc(`Comments of ${id}`)
-      .delete()
-      .then(() => {
-        success("Comentarios del curso eliminados correctamente");
-      })
-      .catch(() => {
-        error("Error al eliminar el curso.");
-      });
+      if (arr) {
+        success("Eliminando comentarios...");
+        DeleteAllComments(id, arr);
+      }
     })
     .catch(() => {
-      error("Error al eliminar el curso.");
+      error("Error al eliminar el curso");
     });
 };
-export { AddCourse, deleteCourse };
+export { AddCourse, deleteCourse, DeleteAllComments };

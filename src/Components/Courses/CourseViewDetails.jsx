@@ -91,7 +91,7 @@ const DetallesCourseView = () => {
             <div>
               {curso.id && (
                 <CommentBoxApp
-                  CollectionName={`Comments of ${curso.id}`}
+                  CollectionName={`${curso.id}`}
                   firebase={firebase}
                 />
               )}

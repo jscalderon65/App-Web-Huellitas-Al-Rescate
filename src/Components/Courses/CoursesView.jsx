@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 import {useOnSnapshotCollection} from "my-customhook-collection";
 import CarrouselCourses from './CoursesComponents/CarrouselCourses';
 import CardCourse from './CoursesComponents/CardCourse';
-/* import data from './data'; */
+import {Spin } from 'antd';
 
 const CoursesView = () => {
     const db = firebase.firestore();
@@ -17,13 +17,13 @@ const CoursesView = () => {
            {Data&&<Typography.Title level={1} style={{ marginTop: "50px" }} align="center">Cursos Disponibles ({Data.length})</Typography.Title>}
             <div style={{ margin: "50px 40px" }}>
                 <Row gutter={[48, 48]} justify="center" align="middle">
-                    {Data&&Data.map((elemento) => {
+                    {Data?Data.map((elemento) => {
                         return (
                             <Col key={elemento.id} xs={24} sm={15} md={12} lg={8}>
                                 <CardCourse titulo={elemento.titulo} img={elemento.img} id={elemento.id} descripcion={elemento.descripcion} />
                             </Col>
                         )
-                    })}
+                    }):<Spin size="large"/>}
                 </Row>
             </div>
         </Fragment>
