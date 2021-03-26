@@ -1,10 +1,10 @@
 import React from "react";
 import DogCard from "./DogCard.jsx";
-import { DogsInfo } from "./StaticInfo/DogsInfo";
+import { DogsInfo } from "./StaticData/DogsInfo";
 import { Typography, Divider } from "antd";
 import "antd/dist/antd.css";
-const { Title } = Typography;
 const DogProfiles = () => {
+  const { Title } = Typography;
   return (
     <div className="dog-profiles-container">
       <div className="dog-profiles-title">

@@ -1,0 +1,21 @@
+.comments-dashboard-container {
+    height: auto;
+    min-height: 100vh;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+}
+
+.comments-dashboard-table {
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+}
+
+.comments-dashboard-spin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}

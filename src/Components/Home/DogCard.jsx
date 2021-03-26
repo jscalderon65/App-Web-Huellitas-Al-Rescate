@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
+<<<<<<< HEAD:src/Components/Inicio/DogCard.jsx
 import { Image, Typography, Divider, Carousel  } from "antd";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -11,14 +12,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+=======
+import { Image, Typography, Divider } from "antd";
+>>>>>>> 275d05b5bb6c698a4b3f93477649528380c70923:src/Components/Home/DogCard.jsx
 const DogCard = ({ 
   src, 
   name, 
   ExternalDescription, 
+<<<<<<< HEAD:src/Components/Inicio/DogCard.jsx
   InternalDescription ,
   galeryArray
   }) => {
   
+=======
+  InternalDescription 
+}) => {
+  const { Title } = Typography;
+>>>>>>> 275d05b5bb6c698a4b3f93477649528380c70923:src/Components/Home/DogCard.jsx
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {

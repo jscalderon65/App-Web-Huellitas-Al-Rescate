@@ -1,11 +1,9 @@
 import React from "react";
-import BannerAnim, { Element } from "rc-banner-anim";
 import TweenOne from "rc-tween-one";
+import BannerAnim, { Element } from "rc-banner-anim";
 import "rc-banner-anim/assets/index.css";
-
-const { BgElement } = Element;
-
 const Corrousel = () => {
+  const { BgElement } = Element;
   return (
     <BannerAnim prefixCls="banner-user">
       <Element prefixCls="banner-user-elem" key="0">

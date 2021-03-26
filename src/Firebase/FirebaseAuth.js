@@ -15,6 +15,7 @@ const UserGoogleAuth =()=>{
     });
 }
 const googleAuth = () => {
+  logout();
   let provider_Google = new firebase.auth.GoogleAuthProvider();
   const AdminEmail = "huellitasparasiempreprae@gmail.com";
   firebase
