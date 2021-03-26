@@ -1,19 +1,19 @@
 import { firebase } from "../../../Firebase/FirebaseConfig";
+import { deleteImage } from "./StorageFunctions";
 import { message } from "antd";
 import "antd/dist/antd.css";
-const { success, error } = message;
-const AddCourse = () => {
+const { success, error, info } = message;
+const AddCourse = (titulo,descripcion,img,imgName) => {
   firebase
     .firestore()
     .collection(`Cursos`)
     .add({
       fecha: new Date(),
-      titulo: `curso ${Math.random()} `,
-      descripcion:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio impedit nam enim ad porro cupiditate nesciunt, esse fugiat! Velit doloribus eius quibusdam assumenda impedit minima enim quis esse qui dolorem.",
-      img:
-        "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      clases: [{ titulo: "Si" }, { titulo: "No" }],
+      titulo,
+      descripcion,
+      img,
+      imgName,
+      clases:[],
     })
     .then(() => {
       success("Curso creado satisfactoriamente");
@@ -36,17 +36,19 @@ const DeleteAllComments = (id, arr) => {
   arr.map(async (item) => await deleteComment(id, item.id));
 };
 
-const deleteCourse = (id, arr) => {
+const deleteCourse = (id, arr, imgName) => {
   firebase
     .firestore()
     .collection("Cursos")
     .doc(id)
     .delete()
     .then(() => {
-      success("Curso eliminado correctamente");
+      info("Espera...")
+      success("Eliminando curso...");
+      deleteImage(firebase,"Images",imgName);
       if (arr) {
         success("Eliminando comentarios...");
-        DeleteAllComments(id, arr);
+        DeleteAllComments( id, arr);
       }
     })
     .catch(() => {

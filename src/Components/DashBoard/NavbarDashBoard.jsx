@@ -3,8 +3,8 @@ import { logout } from "../../Firebase/FirebaseAuth";
 import { Button, Drawer, Typography, Divider } from "antd";
 import { MenuUnfoldOutlined,CommentOutlined,BookOutlined,SettingOutlined } from "@ant-design/icons";
 import { NavLink  } from "react-router-dom";
-import { UserOutlined } from "@ant-design/icons";
-const NavBarDashBoard = ({ history }) => {
+import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+const NavBarDashBoard = () => {
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -19,6 +19,7 @@ const NavBarDashBoard = ({ history }) => {
           <MenuUnfoldOutlined />
         </Button>
         <Button onClick={logout} type="primary" size="large" danger>
+        <LogoutOutlined />
           Salir
         </Button>
       </div>

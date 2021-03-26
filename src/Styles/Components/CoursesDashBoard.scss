@@ -28,7 +28,7 @@
     box-shadow: 2px 2px 10px rgba(0,0,0,.2);
     display:grid;
     padding:20px;
-    grid-template-columns: repeat(auto-fill,minmax(250px,310px));
+    grid-template-columns: repeat(auto-fill,minmax(250px,330px));
     grid-auto-rows: auto;
     grid-gap:20px;
     justify-content:center;
@@ -41,6 +41,9 @@
     min-height: 100px;
 }
 .courses-dashboard-card{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
     box-shadow: 2px 2px 10px rgba(0,0,0,.2);
     transition: transform 0.2s;
 }
@@ -48,12 +51,12 @@
     transform: translateY(-3px);
 }
 .courses-dashboard-card-img{
-    width:100%;
-    height:80%;
+    height: 300px;
+    flex:1;
 }
 .courses-dashboard-card-title{
     text-align: center;
-    padding:5px;
+    padding:10px;
 }
 .courses-dashboard-card-actions{
     padding:10px;
@@ -72,4 +75,34 @@
 .courses-dashboard-add-button{
     display: flex;
     justify-content:center;
+}
+.form-new-curse{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:40vw;
+    height: auto;
+    min-height: 30vh;
+    padding:20px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.2);
+
+}
+
+@media(max-width:700px){
+
+    .form-new-curse{
+        width: 90vw;
+    } 
+
+}
+
+.before-upload-image-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding:20px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.2);
 }

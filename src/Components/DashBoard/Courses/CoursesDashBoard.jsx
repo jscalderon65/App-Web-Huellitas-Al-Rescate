@@ -1,10 +1,10 @@
 import React from "react";
-import { Spin, Input, Button, Typography, Divider } from "antd";
+import { Spin, Input, Typography, Divider } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useForm,useOnSnapshotCollection} from "my-customhook-collection";
 import { getCoursesByTitle } from "./getCoursesByTitle.js";
 import { firebase } from "../../../Firebase/FirebaseConfig";
-import { AddCourse } from "./AddCourse";
+import CourseRegisterModal from './CourseRegisterModal';
 import CourseCard from "./CourseCard";
 const CoursesDashBoard = () => {
   const suffix = (
@@ -47,9 +47,7 @@ const CoursesDashBoard = () => {
         </form>
         <br />
         <div className="courses-dashboard-add-button">
-          <Button type="primary" size="large" onClick={AddCourse}>
-            Agregar nuevo curso
-          </Button>
+          < CourseRegisterModal />
         </div>
         <div className="courses-dashboard-result">
           {CoursesFiltered.length > 0 ? (

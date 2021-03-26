@@ -86,7 +86,7 @@ const CommentTable = ({ collection = "comments", title }) => {
       {Data ? (
         <div className="comments-dashboard-table">
           <Typography.Title style={{ textAlign: "left" }} level={3}>
-            Comentarios de: {title}
+            Comentarios de: <i>{title}</i>
           </Typography.Title>
           <Divider />
           <Table columns={columns} dataSource={newData} size="small" />

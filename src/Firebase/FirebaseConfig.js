@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 firebase.initializeApp({
   apiKey: "AIzaSyBx1EKctVjc19HsM_fi24UZfFjMjsndhTI",
   authDomain: "huellitasparasiempre-ed7e4.firebaseapp.com",
