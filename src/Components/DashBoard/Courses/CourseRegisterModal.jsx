@@ -3,12 +3,17 @@ import { firebase } from "../../../Firebase/FirebaseConfig";
 import { uploadImage } from "./StorageFunctions";
 import { useForm } from "my-customhook-collection";
 import { Modal, Image, Button, Input, Typography, Divider } from "antd";
-import { UploadOutlined, DeleteOutlined, FileAddOutlined } from "@ant-design/icons";
+import {
+  UploadOutlined,
+  DeleteOutlined,
+  FileAddOutlined,
+} from "@ant-design/icons";
 import { AddCourse } from "./AddCourse";
 import "antd/dist/antd.css";
 
 const CourseRegisterModal = () => {
   const { Title } = Typography;
+
   const [{ title, description }, onChangeExample, setFormValues] = useForm({
     title: "",
     description: "",
@@ -19,7 +24,7 @@ const CourseRegisterModal = () => {
     isFile: false,
   });
 
-  const [/* imageUrl */, setImageUrl] = useState("");
+  const [, /* imageUrl */ setImageUrl] = useState("");
 
   const [PrevImageUrl, setPrevImageUrl] = useState("");
 
@@ -58,14 +63,19 @@ const CourseRegisterModal = () => {
       title: "",
       description: "",
     });
-    document.querySelector("#file").value = "";
+        document.querySelector("#file").value = "";
   };
 
+  
+
+
+
   const uploadPicture = () => {
-    uploadImage(setLoading, setImageUrl, file, "Images", firebase).then(({urlImagen,ImageName})=>{
-      AddCourse(title, description, urlImagen, ImageName);
-      handleCancel();
-    }
+    uploadImage(setLoading, setImageUrl, file, "Images", firebase).then(
+      ({ urlImagen, ImageName }) => {
+        AddCourse(title, description, urlImagen, ImageName);
+        handleCancel();
+      }
     );
   };
 
@@ -79,8 +89,8 @@ const CourseRegisterModal = () => {
 
   return (
     <div>
-      <Button  type="primary" size="large"  onClick={showModal}>
-      <FileAddOutlined />  Agregar nuevo curso
+      <Button type="primary" size="large" onClick={showModal}>
+        <FileAddOutlined /> Agregar nuevo curso
       </Button>
       <Modal
         centered
@@ -98,19 +108,22 @@ const CourseRegisterModal = () => {
           flexDirection: "column",
         }}
       >
+
         <form
           className="form-new-curse"
           onSubmit={(e) => {
             e.preventDefault();
             uploadPicture();
           }}
-          >
-          <Divider><Title level={2}>Registro de curso</Title></Divider>
+        >
+          <Divider>
+            <Title level={2}>Registro de curso</Title>
+          </Divider>
           <Input
             onChange={onChangeExample}
             name="title"
             value={title}
-            maxLength={30}
+            maxLength={20}
             minLength={20}
             placeholder="Título"
             autoComplete="off"
@@ -149,7 +162,7 @@ const CourseRegisterModal = () => {
                 src={PrevImageUrl}
                 alt="PrevImage"
               />
-              <br/>
+              <br />
               <Button
                 size="large"
                 type="primary"
@@ -212,7 +225,7 @@ const CourseRegisterModal = () => {
               Registrar curso
             </Button>
           ) : null}
-          <br/>
+          <br />
           <Button
             type="primary"
             className="btn btn-primary"
@@ -223,6 +236,7 @@ const CourseRegisterModal = () => {
           >
             Cancelar
           </Button>
+
         </form>
       </Modal>
     </div>
