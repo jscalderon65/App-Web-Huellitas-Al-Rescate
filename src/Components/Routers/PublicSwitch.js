@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { Footer, NavBar, Home, CoursesView, CourseViewDetails, ActivitiesView } from '../index.js';
 
-import { Footer, NavBar, Home, CoursesView, CourseViewDetails } from '../index.js';
 const PublicSwitch = () => {
   return (
     <Fragment>
@@ -23,6 +23,11 @@ const PublicSwitch = () => {
             exact
             path="/cursos/:id"
             component={CourseViewDetails}
+          />
+          <Route
+            exact
+            path="/actividades/:id"
+            component={ActivitiesView}
           />
           <Redirect to="/inicio" />
         </Switch>

@@ -7,7 +7,6 @@ const NavBar = ({ history }) => {
         const n = document.getElementById("n");
         m.classList.toggle("active");
         n.classList.toggle("active");
-        console.log(m,n)
     }
 
     return (

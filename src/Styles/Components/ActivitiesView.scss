@@ -1,0 +1,50 @@
+.video {
+  position: relative;
+  width: 99.9%;
+  height: 0;
+  padding-bottom: 56.5%;
+}
+
+.video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.video .anterior {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  font-size: 40px;
+  color: white;
+  background-color: $transparent;
+  transition: all 0.5s;
+}
+.video .siguiente {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  font-size: 40px;
+  color: white;
+  background-color: $transparent;
+  transition: all 0.5s;
+}
+.siguiente :hover {
+  color: $secondary;
+  background-color: $primary;
+}
+.anterior :hover {
+  color: $secondary;
+  background-color: $primary;
+}
+.video:hover .siguiente {
+  opacity: 1;
+}
+.video:hover .anterior {
+  opacity: 1;
+}

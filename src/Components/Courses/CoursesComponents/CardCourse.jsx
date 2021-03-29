@@ -10,7 +10,7 @@ const CardCourse = ({ titulo, descripcion, img, id }) => {// limite de titulo 36
             <div className="card-c" style={{ backgroundImage: `url("${img}")` }} >
                 <div className="card-course-content">
                     <div className="contente">
-                        <Typography.Title level={3} style={{ color: "white" }} align="center">{titulo}</Typography.Title>
+                        <Typography.Title level={4} style={{ color: "white" }} align="center">{titulo}</Typography.Title>
                         <Divider />
                         <div className="card-course-button"><Button  onClick={() => history.push(`/cursos/${id}`)} type="primary" >Ver Curso</Button></div>
                     </div>

@@ -10,7 +10,7 @@ const ClasesLists = ({ list }) => {
         gutter={[48, 48]}
         style={{ height: "auto", padding: "50px 50px", background: "white" }}
       >
-        <Col xs={20}>
+        <Col md={20}>
           <Title>Lista de Clases</Title>
           <div style={{ marginTop: "50px" }}>
             <Timeline>

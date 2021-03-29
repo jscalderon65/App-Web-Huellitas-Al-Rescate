@@ -10,7 +10,7 @@ const CoursesView = () => {
     const db = firebase.firestore();
     const refColl = db.collection("Cursos");
     const [Data] = useOnSnapshotCollection(refColl);
-    console.log(Data);
+
     return (
         <Fragment>
             <CarrouselCourses />

@@ -12,6 +12,7 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^7.0.2",
     "firebase": "^8.2.10",
+    "get-youtube-id": "^1.0.1",
     "moment": "^2.29.1",
     "my-comment-box-app": "^1.1.3",
     "my-customhook-collection": "^1.3.2",

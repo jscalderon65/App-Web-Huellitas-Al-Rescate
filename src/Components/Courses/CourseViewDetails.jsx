@@ -25,16 +25,17 @@ const DetallesCourseView = () => {
     //Obteniendo curso de los datos
     return Data.filter((e) => (e.id === idCourse ? e : false));
   };
-  Data && console.log(getCourse(id), id);
+  Data && getCourse(id);
   useEffect(() => {
     Data && setCurso(getCourse(id)[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Data]);
-  console.log(curso);
+
   return (
     Data && (
       <Fragment>
         <BannerCourse
+          id={id}
           title={curso.titulo}
           description={curso.descripcion}
           img={curso.img}
@@ -49,7 +50,7 @@ const DetallesCourseView = () => {
             background: "white",
           }}
         >
-          <Col xs={20}>
+          <Col md={20}>
             <Title>Sección de comentarios</Title>
             <Divider></Divider>
             {isOn ? (

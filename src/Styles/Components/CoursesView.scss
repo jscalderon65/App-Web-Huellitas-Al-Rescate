@@ -1,17 +1,18 @@
 .card-c {
   width: 100%;
-  height: 400px;
+  height: 300px;
   background-size: cover;
   background-position: -50px;
   overflow: hidden;
   transition: 0.5s ease;
-  border-radius: 1rem;
+  border-radius: 0.2rem;
+  box-shadow: 5px 10px 8px #888888;
 }
 .card-course-content {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.576);
-  margin-top: 300px;
+  background-color: #221d1b9a;
+  margin-top: 200px;
   transition: 0.5s ease;
 }
 .card-c:hover .card-course-content {

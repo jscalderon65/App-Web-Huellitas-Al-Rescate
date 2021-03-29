@@ -1,9 +1,13 @@
 //View colors
 $primary: #f7b749;
-$primaryTransparent: #f7b749CC;
+$primaryTransparent: #f7b749cc;
 $hoverprimary: #f19e18;
-$secondary: #423834;
+$secondary: #221d1b;
 $whiteColor: #ffffff;
 //Functions
 $danger: #aa2037;
 $success: #438aa8;
+$transparent: #221d1bcc;
+.bg-secondary {
+  background-color: $secondary;
+}
