@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Input, Divider, Typography } from "antd";
 import {useForm} from 'my-customhook-collection';
-import { AddClass, } from "./AddClass";
+import { AddClass, } from "./FirebaseFunctions/AddClass";
 import { FileAddOutlined, SaveOutlined } from "@ant-design/icons";
 const AddClassModal = ({ Data, courseId }) => {
   const {Title}=Typography;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { firebase } from "../../../Firebase/FirebaseConfig";
-import { uploadImage } from "./StorageFunctions";
+import { uploadImage } from "./FirebaseFunctions/StorageFunctions";
 import { useForm } from "my-customhook-collection";
 import { Modal, Image, Button, Input, Typography, Divider } from "antd";
 import {
@@ -8,7 +8,7 @@ import {
   DeleteOutlined,
   FileAddOutlined,
 } from "@ant-design/icons";
-import { AddCourse } from "./AddCourse";
+import { AddCourse } from "./FirebaseFunctions/AddCourse";
 import "antd/dist/antd.css";
 
 const CourseRegisterModal = () => {
@@ -207,6 +207,7 @@ const CourseRegisterModal = () => {
           </Button>
           <br />
           {isFile ? (
+            <>            
             <Button
               className="btn btn-primary"
               type="primary"
@@ -224,8 +225,10 @@ const CourseRegisterModal = () => {
             >
               Registrar curso
             </Button>
+            <br/>
+            </>
           ) : null}
-          <br />
+         
           <Button
             type="primary"
             className="btn btn-primary"

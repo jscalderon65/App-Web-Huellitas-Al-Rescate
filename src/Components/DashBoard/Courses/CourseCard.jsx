@@ -2,10 +2,11 @@ import React from "react";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { Image, Button, Popconfirm } from "antd";
 import { useOnSnapshotCollection } from "my-customhook-collection";
-import { DeleteOutlined, EditOutlined, FolderAddOutlined } from "@ant-design/icons";
-import { deleteCourse } from "./AddCourse";
-import {Link} from 'react-router-dom'
-const CourseCard = ({ titulo, img, id, imgName, clases}) => {
+import { deleteCourse } from "./FirebaseFunctions/AddCourse";
+import { Link } from "react-router-dom";
+import { DeleteOutlined, FolderAddOutlined } from "@ant-design/icons";
+import EditCourseModal from "./EditCourseModal";
+const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
   const db = firebase.firestore();
   const refColl = db.collection(id);
   const [Data] = useOnSnapshotCollection(refColl);
@@ -31,16 +32,12 @@ const CourseCard = ({ titulo, img, id, imgName, clases}) => {
                 Eliminar
               </Button>
             </Popconfirm>
-            <Link to={`/dashboard/cursos/${id}`}>            
-            <Button size="large">
-            <FolderAddOutlined />
-            ({clases.length})
-            </Button>
+            <Link to={`/dashboard/cursos/${id}`}>
+              <Button size="large">
+                <FolderAddOutlined />({clases.length})
+              </Button>
             </Link>
-            <Button  size="large" type="primary">
-              <EditOutlined />
-              Editar
-            </Button>
+            <EditCourseModal Data={{ titulo, img, id, imgName, clases,descripcion }} />
           </>
         )}
       </div>

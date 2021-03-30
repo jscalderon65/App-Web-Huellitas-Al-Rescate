@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Input, Divider, Typography } from "antd";
 import { useForm } from "my-customhook-collection";
 import { EditOutlined, SaveOutlined } from "@ant-design/icons";
-import { EditClass } from "./AddClass";
+import { EditClass } from "./FirebaseFunctions/AddClass";
 const EditClassModal = ({ InfoClass, Data, courseId }) => {
   const { Title } = Typography;
   const [loading, setLoading] = useState(false);

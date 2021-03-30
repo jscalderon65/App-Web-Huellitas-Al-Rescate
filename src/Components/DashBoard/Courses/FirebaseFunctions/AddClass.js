@@ -1,4 +1,4 @@
-import { firebase } from "../../../Firebase/FirebaseConfig";
+import { firebase } from "../../../../Firebase/FirebaseConfig";
 import { message } from "antd";
 import "antd/dist/antd.css";
 const { success, error/* , info  */} = message;

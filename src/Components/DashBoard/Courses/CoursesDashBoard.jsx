@@ -2,7 +2,7 @@ import React from "react";
 import { Spin, Input, Typography, Divider } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useForm,useOnSnapshotCollection} from "my-customhook-collection";
-import { getCoursesByTitle } from "./getCoursesByTitle.js";
+import { getCoursesByTitle } from "./Helpers/getCoursesByTitle.js";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import CourseRegisterModal from './CourseRegisterModal';
 import CourseCard from "./CourseCard";

@@ -16,7 +16,7 @@ import {
   RollbackOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { deleteClass } from "./AddClass";
+import { deleteClass } from "./FirebaseFunctions/AddClass";
 import AddClassModal from './AddClassModal'
 import EditClassModal from './EditClassModal';
 const ClassesOperations = () => {

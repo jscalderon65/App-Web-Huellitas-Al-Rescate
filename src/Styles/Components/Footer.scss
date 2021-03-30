@@ -4,6 +4,8 @@
   grid-template-rows: 1fr;
   padding-top: 40px;
   padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: white;
   background: $secondary;
   height: auto;
@@ -33,7 +35,7 @@
 }
 
 .social-networks {
-  width: 50%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
 }
@@ -48,7 +50,7 @@
 .map-styles {
   border: solid white;
   border-radius: 5px;
-  width: 300px;
+  width: 250px;
   height: 190px;
 }
 
@@ -58,7 +60,7 @@
 }
 .rights-reserved>div{
   font-size: 15px;
-  width: 50%;
+  width: 100%;
   display:flex;
   justify-content:space-between;
   a{
@@ -69,8 +71,10 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .footer_container {
+    padding-left: 30px;
+    padding-right: 30px;
     grid-template-columns: 1fr;
     grid-gap: 40px;
   }
@@ -86,7 +90,7 @@
 
     a{
       margin-top: 10px;
-      width:50%;
+      width:100%;
       display:flex;
       justify-content:space-between;
       align-items: center;

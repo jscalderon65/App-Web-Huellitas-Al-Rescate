@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { UserGoogleAuth, logout } from "../../Firebase/FirebaseAuth";
-/* import { CommentBoxApp } from "../CommentSection";*/
 import { CommentBoxApp } from "my-comment-box-app";
 import {
   useFirebaseUser,
@@ -11,7 +10,7 @@ import { useParams } from "react-router";
 import { Col, Row, Typography, Button, Divider } from "antd";
 import BannerCourse from "./CoursesComponents/BannerCourse";
 import ClasesLists from "./CoursesComponents/ClasesLists";
-/* import data from "./data"; */
+
 
 const DetallesCourseView = () => {
   const db = firebase.firestore();
@@ -35,11 +34,13 @@ const DetallesCourseView = () => {
     Data && (
       <Fragment>
         <BannerCourse
+          fecha={curso.fecha}
           id={id}
           title={curso.titulo}
           description={curso.descripcion}
           img={curso.img}
-        />
+        />  
+        
         <ClasesLists list={curso.clases} />
         <Row
           justify="center"
