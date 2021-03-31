@@ -1,5 +1,5 @@
 import React from "react";
-import { Spin, Input, Typography, Divider } from "antd";
+import { Spin, Input, Typography } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useForm,useOnSnapshotCollection} from "my-customhook-collection";
 import { getCoursesByTitle } from "./Helpers/getCoursesByTitle.js";
@@ -30,9 +30,7 @@ const CoursesDashBoard = () => {
   return (
     <div className="courses-dashboard-container">
       <div className="courses-dashboard-new-course-container">
-        <Divider>
-          <Typography.Title level={3}>Configuración de Cursos</Typography.Title>
-        </Divider>
+          <Typography.Title style={{textAlign: "center"}} level={3}>Configuración de Cursos</Typography.Title>
         <form onSubmit={handleSearch}>
           <Input
             suffix={suffix}

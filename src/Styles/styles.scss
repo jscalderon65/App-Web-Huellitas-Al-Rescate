@@ -1,5 +1,7 @@
+//Configurations
 @import "./Base/base";
 @import "./Base/settings";
+
 //Components
 @import "./Components/NavBar.scss";
 @import "./Components/Entry.scss";
@@ -12,3 +14,4 @@
 @import "./Components/DashboardSideMenu.scss";
 @import "./Components/ClassDashboardContainer.scss";
 @import "./Components/ActivitiesView.scss";
+@import "./Components/GalleryOperationsContainer.scss";

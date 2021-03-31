@@ -68,7 +68,7 @@ const ActivitiesView = () => {
                 src={url(clases[actividad].YoutubeUrl)}
                 title={clases[actividad].titulo}
                 frameBorder="0"
-                allowFullscreen
+                allowFullScreen
               />
               {actividad === clases.length - 1 ? (
                 console.log("hola")

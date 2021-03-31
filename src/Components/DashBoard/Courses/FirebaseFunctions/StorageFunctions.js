@@ -66,7 +66,11 @@ const EditUploadImage = async (
     return { urlImagen, ImageName: name };
   } catch (e) {
     error(e);
+    return e
     console.log(e);
   }
 };
+
+
+
 export { uploadImage, deleteImage, EditUploadImage };

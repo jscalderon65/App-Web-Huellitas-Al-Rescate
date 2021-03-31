@@ -33,7 +33,7 @@ const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
               </Button>
             </Popconfirm>
             <Link to={`/dashboard/cursos/${id}`}>
-              <Button size="large">
+              <Button className="button-add" size="large">
                 <FolderAddOutlined />({clases.length})
               </Button>
             </Link>

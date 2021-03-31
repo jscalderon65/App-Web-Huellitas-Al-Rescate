@@ -10,3 +10,4 @@ export { default as ClassesOperations } from './DashBoard/Courses/ClassesOperati
 export { default as CoursesView } from './Courses/CoursesView';
 export { default as CourseViewDetails } from './Courses/CourseViewDetails';
 export { default as ActivitiesView } from './Courses/ActivitiesView';
+export { default as GalleryOperations } from './DashBoard/StudentSection/GalleryOperations';

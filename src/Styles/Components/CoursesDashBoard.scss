@@ -41,6 +41,8 @@
     min-height: 100px;
 }
 .courses-dashboard-card{
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -59,7 +61,8 @@
     padding:10px;
 }
 .courses-dashboard-card-actions{
-    padding:10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: space-around;
 }
@@ -88,12 +91,21 @@
     box-shadow: 2px 2px 10px rgba(0,0,0,.2);
 
 }
+
 @media(max-width:700px){
 
     .form-new-curse{
-        width: 90vw;
+        width: 85vw;
     } 
-
+    .courses-dashboard-card-actions{      
+        height:150px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .button-add{
+        width: 100%;
+    }
 }
 
 .before-upload-image-container{

@@ -1,4 +1,9 @@
 .comments-dashboard-container {
+    border-radius: 10px;
+    margin:20px;
+    margin-top: 20px;
+    display:grid;
+    padding:20px;
     height: auto;
     min-height: 100vh;
     padding: 10px;
@@ -8,6 +13,16 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
 }
 
+.comments-dashboard-title{
+    border-radius: 10px;
+    margin:20px;
+    margin-bottom: 0%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.2);
+    padding: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 .comments-dashboard-table {
     padding: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);

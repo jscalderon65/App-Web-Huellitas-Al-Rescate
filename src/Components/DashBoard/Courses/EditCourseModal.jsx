@@ -113,7 +113,7 @@ const EditCourseModal = ({ Data }) => {
       >
         <form className="form-new-curse" onSubmit={onEditSubmit}>
           <Divider>
-            <Title level={2}>Información del curso</Title>
+            <Title level={3} style={{textAlign: "center"}}>Información del curso</Title>
           </Divider>
           <Input
             onChange={onChangeExample}
@@ -153,8 +153,9 @@ const EditCourseModal = ({ Data }) => {
               </Button>
             </>
           ) : null}
-          <br />
         </form>
+
+          <br />
         <div className="form-new-curse">
           <Divider>
             <Title level={2}>Imagen del curso</Title>

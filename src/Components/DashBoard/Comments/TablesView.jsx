@@ -25,11 +25,11 @@ const TablesView = () => {
   }, [Data]);
   return (
     <>
-      <Divider/>
-      <Typography.Title style={{ textAlign: "center" }}>
+    <div className="comments-dashboard-title">
+      <Typography.Title style={{ textAlign: "center"}} level={3}>
         Configuración de comentarios
       </Typography.Title>
-      <Divider/>
+    </div>
       <div className="comments-dashboard-container">
         {Data &&
           DataInfo &&
