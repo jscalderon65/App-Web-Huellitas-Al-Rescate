@@ -1,25 +1,34 @@
 import React from "react";
-import { Button, Typography } from "antd";
+import { Typography, Spin } from "antd";
+import { firebase } from "../../../Firebase/FirebaseConfig";
+import { useOnSnapshotCollection } from "my-customhook-collection";
 import GalleryCard from "./GalleryCard";
-import {
-    FileAddOutlined,
-  } from "@ant-design/icons";
+import AddImageModal from "./AddImageModal";
 const GalleryOperations = () => {
   const { Title } = Typography;
+  const db = firebase.firestore();
+  const refColl = db.collection("Galería");
+  const [Data] = useOnSnapshotCollection(refColl);
   return (
     <div className="gallery-operations-container">
       <div className="gallery-operations-creation-zone">
         <Title style={{ textAlign: "center" }} level={3}>
           Configuración de contenido multimedia
         </Title>
-        <Button type="primary" size="large"><FileAddOutlined/>Agregar Imagen</Button>
+        <AddImageModal />
+        {Data&&<Title level={3}>Imágenes({Data.length})</Title>}
       </div>
-      <div className="gallery-operations-cards-container">
-        <GalleryCard />
-        <GalleryCard />
-        <GalleryCard />
-        <GalleryCard />
-      </div>
+      {Data ? (
+        <div className="gallery-operations-cards-container">
+          {Data.map((item) => (
+            <GalleryCard key={item.id} Data={item} />
+          ))}
+        </div>
+      ) : (
+        <div className="courses-dashboard-spin">
+          <Spin size="large" />
+        </div>
+      )}
     </div>
   );
 };

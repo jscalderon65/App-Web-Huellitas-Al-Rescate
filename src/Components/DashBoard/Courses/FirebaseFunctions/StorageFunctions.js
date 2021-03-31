@@ -2,6 +2,7 @@ import { message } from "antd";
 import { editImageCourse } from "./AddCourse";
 import "antd/dist/antd.css";
 const { success, error } = message;
+
 const deleteImage = async (firebase, ref, title) => {
   const storage = firebase.storage();
   const desertRef = storage.ref(ref).child(title);
@@ -66,8 +67,8 @@ const EditUploadImage = async (
     return { urlImagen, ImageName: name };
   } catch (e) {
     error(e);
-    return e
     console.log(e);
+    return e
   }
 };
 

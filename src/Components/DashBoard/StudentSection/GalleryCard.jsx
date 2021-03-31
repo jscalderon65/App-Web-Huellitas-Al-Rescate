@@ -1,15 +1,34 @@
-import React from 'react'
-import {Image, Button} from 'antd';
-import { DeleteOutlined, EditOutlined} from "@ant-design/icons";
-const GalleryCard = () => {
+import React,{useState} from 'react'
+import {Image, Button, Popconfirm} from 'antd';
+import { DeleteOutlined } from "@ant-design/icons";
+import {DeleteImage} from './FirebaseFunctions/StorageFunctions';
+import EditImageModal from './EditImageModal';
+const GalleryCard = ({Data}) => {
+    const [loading, setLoading] = useState(false);
+    const onDeleteItem = ()=>{
+        setLoading(true);
+        DeleteImage ("Gallery", Data.imgName, Data.id).then(()=>{
+            setLoading(false);
+        });
+    }
     return (
         <div className="gallery-card">
-            <Image src="https://picsum.photos/seed/picsum/200/300" 
+            <Image src={Data.img} 
             className="gallery-card-img"
-            alt="picsum"/>
+            alt={Data.imgName}/>
             <div>
-            <Button type="primary" size="large" danger><DeleteOutlined/>Borrar</Button>
-            <Button  type="primary" size="large"><EditOutlined/>Editar</Button>
+            <Popconfirm
+              title={"¿Deseas eliminar de forma permanente esta imagen?"}
+              onConfirm={onDeleteItem}
+              okText="Si"
+              cancelText="No"
+            >
+              <Button loading={loading} size="large" type="primary" danger>
+                <DeleteOutlined />
+                Eliminar
+              </Button>
+            </Popconfirm>
+            <EditImageModal Data={Data}/>
             </div>
         </div>
     )

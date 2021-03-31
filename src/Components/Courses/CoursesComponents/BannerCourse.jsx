@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { Button, Col, Row, Typography } from "antd";
 import { Link } from "react-router-dom";
 import {ClockCircleOutlined} from '@ant-design/icons'
-import moment from "moment";
 const BannerCourse = ({
   id,
   title = "Titulo",

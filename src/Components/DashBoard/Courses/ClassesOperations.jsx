@@ -88,7 +88,7 @@ const ClassesOperations = () => {
     <div className="class-dashboard-container">
       {Data ? (
         <div className="class-dashboard-title">
-          <Title level={4}>{Data.titulo}</Title>
+          <Title level={4}>Actividades de ( {Data.titulo.trim()} )</Title>
         </div>
       ) : (
         <Skeleton />

@@ -6,6 +6,7 @@ import {
   TablesView,
   ClassesOperations,
   GalleryOperations,
+  SecondHome,
 } from "../index.js";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "antd/dist/antd.css";
@@ -14,11 +15,10 @@ const PrivateSwitch = () => {
     <>
       <NavbarDashBoard />
       <Switch>
-        
-        <Route 
-        exact 
-        path="/dashboard/cursos" 
-        component={CoursesDashBoard} />
+
+        <Route exact path="/dashboard/inicio" component={SecondHome} />
+
+        <Route exact path="/dashboard/cursos" component={CoursesDashBoard} />
 
         <Route
           exact
@@ -26,18 +26,14 @@ const PrivateSwitch = () => {
           component={ClassesOperations}
         />
 
-        <Route 
-        exact 
-        path="/dashboard/comentarios" 
-        component={TablesView} 
-        />
+        <Route exact path="/dashboard/comentarios" component={TablesView} />
 
         <Route
           exact
           path="/dashboard/estudiantes"
           component={GalleryOperations}
         />
-        <Redirect to="/dashboard/cursos" />
+        <Redirect to="/dashboard/inicio" />
       </Switch>
       <FooterDashBoard />
     </>

@@ -11,3 +11,4 @@ export { default as CoursesView } from './Courses/CoursesView';
 export { default as CourseViewDetails } from './Courses/CourseViewDetails';
 export { default as ActivitiesView } from './Courses/ActivitiesView';
 export { default as GalleryOperations } from './DashBoard/StudentSection/GalleryOperations';
+export { default as SecondHome} from './DashBoard/Home/SecondHome';

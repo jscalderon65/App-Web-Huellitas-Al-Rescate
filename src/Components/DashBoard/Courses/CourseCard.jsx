@@ -1,6 +1,6 @@
 import React from "react";
 import { firebase } from "../../../Firebase/FirebaseConfig";
-import { Image, Button, Popconfirm } from "antd";
+import { Image, Button, Popconfirm, Tooltip} from "antd";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { deleteCourse } from "./FirebaseFunctions/AddCourse";
 import { Link } from "react-router-dom";
@@ -32,11 +32,13 @@ const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
                 Eliminar
               </Button>
             </Popconfirm>
+            <Tooltip placement="top" title={"Configuración de clases"}>
             <Link to={`/dashboard/cursos/${id}`}>
               <Button className="button-add" size="large">
                 <FolderAddOutlined />({clases.length})
               </Button>
             </Link>
+            </Tooltip>
             <EditCourseModal Data={{ titulo, img, id, imgName, clases,descripcion }} />
           </>
         )}

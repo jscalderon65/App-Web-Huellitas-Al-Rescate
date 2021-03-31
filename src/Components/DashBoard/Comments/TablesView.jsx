@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentTable from "./CommentTable";
-import { Typography,Divider } from "antd";
+import { Typography } from "antd";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 const TablesView = () => {
@@ -25,11 +25,14 @@ const TablesView = () => {
   }, [Data]);
   return (
     <>
-    <div className="comments-dashboard-title">
-      <Typography.Title style={{ textAlign: "center"}} level={3}>
-        Configuración de comentarios
-      </Typography.Title>
-    </div>
+      <div className="comments-dashboard-title">
+        <Typography.Title style={{ textAlign: "center" }} level={3}>
+          Configuración de comentarios
+        </Typography.Title>
+        {Data && (
+          <Typography.Title level={3}>Cursos ({Data.length})</Typography.Title>
+        )}
+      </div>
       <div className="comments-dashboard-container">
         {Data &&
           DataInfo &&
