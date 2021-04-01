@@ -85,6 +85,7 @@ const DetallesCourseView = () => {
                   onClick={UserGoogleAuth}
                   type="primary"
                   size="large"
+                  className="btn-primary"
                 >
                   Entra con Google para comentar
                 </Button>

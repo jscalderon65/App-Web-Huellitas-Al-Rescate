@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 const NavBar = ({ history }) => {
 
     const add = () => {
@@ -11,6 +11,7 @@ const NavBar = ({ history }) => {
 
     return (
         <Fragment>
+
             <header>
                 <div className="menu-toggle" id="m" onClick={add} />
                 <Link to="/" className="logo">HUELLITAS AL RESCATE</Link>
@@ -23,6 +24,7 @@ const NavBar = ({ history }) => {
                 </nav>
                 <div className="clearfix" />
             </header>
+
         </Fragment>
     )
 }

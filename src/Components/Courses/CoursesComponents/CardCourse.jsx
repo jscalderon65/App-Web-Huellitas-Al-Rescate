@@ -1,5 +1,6 @@
 import { Button, Divider, Typography } from 'antd';
 import React, { Fragment } from 'react';
+import { ArrowRightOutlined } from '@ant-design/icons'
 import { useHistory } from 'react-router';
 
 const CardCourse = ({ titulo, descripcion, img, id }) => {// limite de titulo 36 caracteres
@@ -12,7 +13,7 @@ const CardCourse = ({ titulo, descripcion, img, id }) => {// limite de titulo 36
                     <div className="contente">
                         <Typography.Title level={4} style={{ color: "white" }} align="center">{titulo}</Typography.Title>
                         <Divider />
-                        <div className="card-course-button"><Button  onClick={() => history.push(`/cursos/${id}`)} type="primary" >Ver Curso</Button></div>
+                        <div className="card-course-button"><Button className="btn-primary" onClick={() => history.push(`/cursos/${id}`)} type="primary" >Ver Curso  <ArrowRightOutlined /></Button></div>
                     </div>
                 </div>
             </div>

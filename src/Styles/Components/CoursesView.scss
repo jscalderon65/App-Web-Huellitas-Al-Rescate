@@ -31,3 +31,10 @@
   width: 100px;
   margin: 50px auto;
 }
+.menu-item-breadcum {
+  color: aliceblue !important;
+  font-weight: 900;
+}
+.menu-item-breadcum:hover {
+  color: $primary !important;
+}

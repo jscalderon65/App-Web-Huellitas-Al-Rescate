@@ -23,6 +23,17 @@
   background-color: $transparent;
   transition: all 0.5s;
 }
+.video .volver {
+  position: absolute;
+  left: 0px;
+  top: 0%;
+  width: 100%;
+  z-index: 20;
+  font-size: 40px;
+  color: white;
+  background-color: $secondary;
+  padding: 20px;
+}
 .video .siguiente {
   position: absolute;
   right: 10px;

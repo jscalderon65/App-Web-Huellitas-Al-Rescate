@@ -11,3 +11,24 @@ $transparent: #221d1bcc;
 .bg-secondary {
   background-color: $secondary;
 }
+.btn-primary {
+  background-color: #ffbc49 !important;
+  border: 1px solid #ffbd4b !important;
+  color: $secondary !important;
+  transition: all 0.5s;
+}
+.btn-secondary {
+  background-color: #1a1614 !important;
+  border: 1px solid #1a1614 !important;
+  color: $primary !important;
+  transition: all 0.5s;
+}
+.btn-primary:hover {
+  background-color: $hoverprimary !important;
+  border: 1px solid #ffbd4b !important;
+}
+.btn-secondary:hover {
+  background-color: $primary !important;
+  border: 1px solid #1a1614 !important;
+  color: $secondary !important;
+}

@@ -13,8 +13,8 @@ const ClasesLists = ({ list }) => {
         <Col md={20}>
           <Title>Lista de Clases</Title>
           <div style={{ marginTop: "50px" }}>
-            <Timeline>
-              {list && list.map((e) => <Item key={e.titulo}>{e.titulo}</Item>)}
+            <Timeline  >
+              {list && list.map((e) => <Item color="#ffbc49" key={e.titulo}>{e.titulo}</Item>)}
             </Timeline>
           </div>
         </Col>

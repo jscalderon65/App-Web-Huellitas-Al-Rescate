@@ -2,7 +2,8 @@ import React, { Fragment, useState } from "react";
 import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
-import { Col, Row, Typography, Tabs, Collapse } from "antd";
+import { Col, Row, Typography, Tabs, Collapse, Breadcrumb } from "antd";
+import { HomeOutlined, UserOutlined } from '@ant-design/icons'
 import {
   CaretLeftOutlined,
   CaretRightOutlined,
@@ -11,7 +12,7 @@ import {
 import getYouTubeID from "get-youtube-id";
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
-
+const { Item } = Breadcrumb;
 const ActivitiesView = () => {
   const { id } = useParams();
   const db = firebase.firestore();
@@ -55,10 +56,23 @@ const ActivitiesView = () => {
         <Row
           gutter={[0, 0]}
           justify="center"
-          style={{ margin: "0px 0px 0px 0px" }}
+          style={{ margin: "0px 0px 100px 0px" }}
         >
           <Col xs={24} md={17}>
             <div className="video">
+              <div className="volver">
+                <Breadcrumb>
+                  <Item className="menu-item-breadcum" href="/inicio">
+                    <HomeOutlined />
+                    <span>  Inicio</span>
+                  </Item>
+                  <Item className="menu-item-breadcum" href="/cursos">
+                    <UserOutlined />
+                    <span>  Cursos</span>
+                  </Item>
+                  <Item className="menu-item-breadcum" href={`/cursos/${id}`}>{titulo}</Item>
+                </Breadcrumb>
+              </div>
               {actividad === 0 ? (
                 console.log("hola")
               ) : (
@@ -101,10 +115,10 @@ const ActivitiesView = () => {
           <Col
             xs={0}
             md={7}
-            style={{ padding: "10px", background: "#29303B", minHeight: "100vh" }}
+            style={{ padding: "10px", minHeight: "100vh" }}
           >
             <br />
-            <Typography.Title align="start" level={3}>
+            <Typography.Title align="center" level={3}>
               Lista Actividades
             </Typography.Title>
             <Collapse onChange={callback} expandIconPosition="left">
@@ -120,8 +134,8 @@ const ActivitiesView = () => {
                 ))}
             </Collapse>
           </Col>
-          <Col xs={24} md={0}>
-            <Row justify="center">
+          <Col xs={24} md={0} >
+            <Row justify="center" >
               <Col xs={22} md={20}>
                 <Tabs defaultActiveKey="3" onChange={callback}>
                   <TabPane tab="Descripcion del Curso" key="1">
