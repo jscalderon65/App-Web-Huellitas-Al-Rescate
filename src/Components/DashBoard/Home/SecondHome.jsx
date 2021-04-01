@@ -48,6 +48,7 @@ const SecondHome = () => {
             curso y actividad de curso. Los cursos poseen cuatro elementos,
             título, descripción, imagen y actividades, estás últimas poseen solo
             tres opciones, título, descripción y url de youtube.
+            Esta sección posee una barra de búsqueda para filtrar y buscar los cursos por el título.
           </li>
           <br />
           <br />
@@ -73,7 +74,7 @@ const SecondHome = () => {
       <WarningOutlined /> Advertencias y términos de uso
       </Title>
       <Title level={5}>
-        Los servicios que se usan en está aplicación son de la colección de sistemas serverless de Google Firebase del cual se usa su base de datos cloud Firestore y su gestor de contenido multimedia cloud Storage, todo esto en su versión gratuita, por eso es aconsejable que no se sobrepasen las 100 imágenes en la aplicación, ya que al ser gratuito, se tiene un almacenamiento limitado.
+        Los servicios que se usan en está aplicación son de la colección de sistemas serverless de Google, Firebase, del cual se usa su base de datos, cloud Firestore y su gestor de contenido multimedia cloud Storage, todo esto en su versión gratuita, por eso es aconsejable que no se sobrepasen las 100 imágenes en la aplicación, ya que al ser gratuito, se tiene un almacenamiento limitado.
         La creación, código e idea de esta aplicación pertenecen a los desarrolladores cuyos perfiles de github se encuentran en el footer del dashboard de configuración, quienes podrán disponer de la aplicación de forma libre.
       </Title>
       <Divider />

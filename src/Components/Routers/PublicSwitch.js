@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { Footer, NavBar, Home, CoursesView, CourseViewDetails, ActivitiesView } from '../index.js';
+import { Footer, NavBar, Home, CoursesView, CourseViewDetails, ActivitiesView, GalleryContainer } from '../index.js';
 
 const PublicSwitch = () => {
   return (
@@ -12,7 +12,7 @@ const PublicSwitch = () => {
           <Route
             exact
             path="/estudiantes"
-            component={() => <h1>En proceso</h1>}
+            component={GalleryContainer}
           />
           <Route
             exact

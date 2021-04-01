@@ -12,7 +12,7 @@ const AddGalleryItem = (description, img, imgName) => {
     .add({
       description,
       date: moment().format(
-        "[Registrado el día] D[/]MM[/]YYYY [a las]  h:mm:ss a"
+        "[Publicado el día] D[/]MM[/]YYYY [a las]  h:mm:ss a"
       ),
       img,
       imgName,

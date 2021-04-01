@@ -75,7 +75,7 @@ const AddClassModal = ({ Data, courseId }) => {
           value={title}
           onChange={onChangeInput}
           minLength={10}
-          maxLength={20}
+          maxLength={24}
           required
           />
           <Input 
