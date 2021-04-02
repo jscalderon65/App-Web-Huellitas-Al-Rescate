@@ -25,15 +25,13 @@ const TablesView = () => {
   }, [Data]);
   return (
     <>
-      <div className="comments-dashboard-title">
+      <div className="comments-dashboard-title animate__animated animate__fadeIn">
         <Typography.Title style={{ textAlign: "center" }} level={3}>
           Configuración de comentarios
         </Typography.Title>
-        {Data && (
-          <Typography.Title level={3}>Cursos ({Data.length})</Typography.Title>
-        )}
+          <Typography.Title level={3}>Cursos {Data&&`(${Data.length})`}</Typography.Title>
       </div>
-      <div className="comments-dashboard-container">
+      <div className="comments-dashboard-container animate__animated animate__fadeIn">
         {Data &&
           DataInfo &&
           DataInfo.map((item) => (

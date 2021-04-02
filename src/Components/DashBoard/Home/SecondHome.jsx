@@ -13,7 +13,7 @@ const SecondHome = () => {
   const { Title, Text } = Typography;
   const mediaQuery = useMediaQuery("(max-width: 460px)");
   return (
-    <div className="second-home-container">
+    <div className="animate__animated animate__fadeIn second-home-container ">
       <Title style={{ textAlign: mediaQuery ? "center" : "left" }}>
         Dashboard de configuración <SettingOutlined />
       </Title>

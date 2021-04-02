@@ -12,9 +12,9 @@ const GalleryCard = ({Data}) => {
         });
     }
     return (
-        <div className="gallery-card">
+        <div className="animate__animated animate__fadeIn gallery-card">
             <Image src={Data.img} 
-            className="gallery-card-img"
+            className="animate__animated animate__fadeIn gallery-card-img"
             alt={Data.imgName}/>
             <div>
             <Popconfirm

@@ -10,13 +10,13 @@ const GalleryOperations = () => {
   const refColl = db.collection("Galería");
   const [Data] = useOnSnapshotCollection(refColl);
   return (
-    <div className="gallery-operations-container">
+    <div className="gallery-operations-container animate__animated animate__fadeIn">
       <div className="gallery-operations-creation-zone">
         <Title style={{ textAlign: "center" }} level={3}>
           Configuración de contenido multimedia
         </Title>
         <AddImageModal />
-        {Data&&<Title level={3}>Imágenes({Data.length})</Title>}
+        <Title level={3}>Imágenes {Data&&`(${Data.length})`}</Title>
       </div>
       {Data ? (
         <div className="gallery-operations-cards-container">

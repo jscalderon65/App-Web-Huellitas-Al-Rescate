@@ -84,7 +84,7 @@ const CommentTable = ({ collection = "comments", title }) => {
   return (
     <div>
       {Data ? (
-        <div className="comments-dashboard-table">
+        <div className="comments-dashboard-table animate__animated animate__fadeIn">
           <Typography.Title style={{ textAlign: "left" }} level={3}>
             Comentarios de ( {title.trim()} )
           </Typography.Title>

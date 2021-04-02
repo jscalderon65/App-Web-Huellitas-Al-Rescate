@@ -28,7 +28,7 @@ const CoursesDashBoard = () => {
   };
   console.log(Data);
   return (
-    <div className="courses-dashboard-container">
+    <div className="animate__animated animate__fadeIn courses-dashboard-container">
       <div className="courses-dashboard-new-course-container">
           <Typography.Title style={{textAlign: "center"}} level={3}>Configuración de Cursos</Typography.Title>
         <form onSubmit={handleSearch}>
