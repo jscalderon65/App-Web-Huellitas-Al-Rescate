@@ -1,7 +1,14 @@
 import React, { Fragment, useEffect } from "react";
-import { Button, Col, Row, Typography, Breadcrumb } from "antd";
+import { Button, Col, Row, Typography, Breadcrumb, message } from "antd";
 import { Link } from "react-router-dom";
-import { ClockCircleOutlined, HomeOutlined, UserOutlined, CopyOutlined, ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
+import {
+  ClockCircleOutlined,
+  HomeOutlined,
+  UserOutlined,
+  CopyOutlined,
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+} from "@ant-design/icons";
 import mostrar from "../../../Animated";
 
 const BannerCourse = ({
@@ -14,9 +21,17 @@ const BannerCourse = ({
   const { Title, Text } = Typography;
 
   useEffect(() => {
-    window.addEventListener("scroll", mostrar)
-  }, [])
-
+    mostrar();
+  }, []);
+  const copyButton = (id_elemento) => {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+    message.success("Texto copiado en el portapapeles");
+  };
   return (
     <Fragment>
       <Row
@@ -25,17 +40,19 @@ const BannerCourse = ({
         gutter={[48, 48]}
         style={{ height: "auto", padding: "100px 50px" }}
       >
-        <Col xs={24} md={12} className="izquierda" >
+        <Col xs={24} md={12} className="izquierda">
           <Breadcrumb>
             <Breadcrumb.Item className="menu-item-breadcum" href="/inicio">
               <HomeOutlined />
-              <span>  Inicio</span>
+              <span> Inicio</span>
             </Breadcrumb.Item>
             <Breadcrumb.Item className="menu-item-breadcum" href="/cursos">
               <UserOutlined />
-              <span>  Cursos</span>
+              <span> Cursos</span>
             </Breadcrumb.Item>
-            <Breadcrumb.Item className="menu-item-breadcum">{title}</Breadcrumb.Item>
+            <Breadcrumb.Item className="menu-item-breadcum">
+              {title}
+            </Breadcrumb.Item>
           </Breadcrumb>
           <br />
           <Title level={1} style={{ color: "white" }}>
@@ -44,36 +61,59 @@ const BannerCourse = ({
           <Text style={{ color: "white" }}>{description}</Text>
           <br />
           <br />
-          <Title level={5} style={{ color: "white" }}><ClockCircleOutlined />{"  "}{fecha}</Title>
+          <Title level={5} style={{ color: "white" }}>
+            <ClockCircleOutlined />
+            {"  "}
+            {fecha}
+          </Title>
           <Link to="/cursos">
-            <Button type="primary" className="btn-secondary" style={{ marginTop: "20px" }} icon={<ArrowLeftOutlined />} danger>
+            <Button
+              type="primary"
+              className="btn-secondary"
+              style={{ marginTop: "20px" }}
+              icon={<ArrowLeftOutlined />}
+              danger
+            >
               Volver
             </Button>
           </Link>
-          <Link to="/cursos" style={{ marginLeft: "10px" }}>
-            <Button type="primary" className="btn-secondary" icon={<CopyOutlined />} style={{ marginTop: "20px" }} danger>
+            <p  id="copy-text" style={{display:"none"}}>{window.location.href}</p>
+            <Button
+              onClick={()=>copyButton("copy-text")}
+              type="primary"
+              className="btn-secondary"
+              icon={<CopyOutlined />}
+              style={{ marginTop: "20px",marginLeft: "10px"}}
+              danger
+            >
               Compartir
             </Button>
-          </Link>
+
           <Link to={`/actividades/${id}`} style={{ marginLeft: "10px" }}>
-            <Button type="primary" className="btn-primary" style={{ marginTop: "20px" }} >
+            <Button
+              type="primary"
+              className="btn-primary"
+              style={{ marginTop: "20px" }}
+            >
               Ir al curso
               <ArrowRightOutlined />
             </Button>
           </Link>
         </Col>
-        <Col xs={24} md={8} >
+        <Col xs={24} md={8}>
           <div style={{ height: "300px", background: "white" }}>
-            <div style={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "100%",
-              height: "300px"
-            }}
-            ></div>
-          </div>
+            <div
+              style={{
+                backgroundImage: `url(${img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100%",
+                height: "300px",
+              }}
+              >
 
+              </div>
+          </div>
         </Col>
       </Row>
     </Fragment>

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
+import {Link} from 'react-router-dom';
 import { Col, Row, Typography, Tabs, Collapse, Breadcrumb } from "antd";
 import { HomeOutlined, UserOutlined } from '@ant-design/icons'
 import {
@@ -62,15 +63,19 @@ const ActivitiesView = () => {
             <div className="video">
               <div className="volver">
                 <Breadcrumb>
-                  <Item className="menu-item-breadcum" href="/inicio">
+                <Link to={`/inicio`}>                  
+                <Item className="menu-item-breadcum">
                     <HomeOutlined />
                     <span>  Inicio</span>
                   </Item>
-                  <Item className="menu-item-breadcum" href="/cursos">
+                </Link>
+                  <Link to={`/cursos`}>                    
+                  <Item className="menu-item-breadcum">
                     <UserOutlined />
                     <span>  Cursos</span>
                   </Item>
-                  <Item className="menu-item-breadcum" href={`/cursos/${id}`}>{titulo}</Item>
+                    </Link> 
+                  <Link to={`/cursos/${id}`}><Item className="menu-item-breadcum" >{titulo}</Item></Link>
                 </Breadcrumb>
               </div>
               {actividad === 0 ? (
