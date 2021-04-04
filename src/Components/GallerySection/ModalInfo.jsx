@@ -16,9 +16,9 @@ const ModalInfo = ({ Data }) => {
 
   return (
     <>
-      <h3 onClick={showModal} className="gallery-info">
-        
-      </h3>
+      <Button onClick={showModal} className="gallery-info">
+        Ver más
+      </Button>
       <Modal
         title={null}
         closable={false}
@@ -34,7 +34,7 @@ const ModalInfo = ({ Data }) => {
       >
         <div className="modal-gallery-content">
           <Image
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ width: "200px", height: "100%", objectFit: "cover" }}
             src={Data.img}
           />
 
