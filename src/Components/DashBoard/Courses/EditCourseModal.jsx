@@ -43,7 +43,7 @@ const EditCourseModal = ({ Data }) => {
   });
 
   const openInputFile = () => {
-    document.querySelector(`#${Data.id}`).click();
+    document.getElementById(`${Data.id}`).click();
   };
 
   const showModal = () => {
@@ -57,7 +57,11 @@ const EditCourseModal = ({ Data }) => {
   const handleCancel = () => {
     setIsModalVisible(false);
     setPrevImageUrl("");
-    document.querySelector(`#${Data.id}`).value = "";
+    setPictureUploadSecure({
+      file: [],
+      isFile: false,
+    });
+    document.getElementById(Data.id).value = "";
   };
 
   const onEditSubmit = (e) => {
@@ -75,6 +79,7 @@ const EditCourseModal = ({ Data }) => {
       file: [],
       isFile: false,
     });
+    document.getElementById(Data.id).value = "";
   };
 
   const onChangeImage = () => {
@@ -220,11 +225,12 @@ const EditCourseModal = ({ Data }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  textOverflow: "ellipsis"
                 }}
                 danger
               >
                 <UploadOutlined />
-                {isFile ? file.name : "Cambiar imagen"}
+                {isFile ? (file.name.length>=15?`${file.name.substr(0,15)} ....`:file.name) : "Escoge una imagen"}
               </Button>
             </>
           )}

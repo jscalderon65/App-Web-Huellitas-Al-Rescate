@@ -1,5 +1,5 @@
 import React from "react";
-import { Spin, Input, Typography } from "antd";
+import { Spin, Input, Typography,BackTop } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useForm,useOnSnapshotCollection} from "my-customhook-collection";
 import { getCoursesByTitle } from "./Helpers/getCoursesByTitle.js";
@@ -28,6 +28,9 @@ const CoursesDashBoard = () => {
   };
   console.log(Data);
   return (
+    <>
+    
+    <BackTop />
     <div className="animate__animated animate__fadeIn courses-dashboard-container">
       <div className="courses-dashboard-new-course-container">
           <Typography.Title style={{textAlign: "center"}} level={3}>Configuración de Cursos</Typography.Title>
@@ -73,6 +76,7 @@ const CoursesDashBoard = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

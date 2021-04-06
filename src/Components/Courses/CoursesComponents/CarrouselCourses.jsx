@@ -7,7 +7,7 @@ const { BgElement } = Element;
 
 const CorrouselCourses = () => {
   return (
-    <BannerAnim style={{height:"60vh"}}id="courses">
+    <BannerAnim style={{height:"80vh"}}id="courses">
       <Element prefixCls="banner-user-elem" key="0">
         <BgElement
           key="bg"

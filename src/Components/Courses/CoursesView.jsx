@@ -1,10 +1,10 @@
-import { Col, Row, Typography } from 'antd';
+import { Col, Row, Typography,Spin,BackTop } from 'antd';
 import { firebase } from "../../Firebase/FirebaseConfig";
 import React, { Fragment } from 'react';
 import {useOnSnapshotCollection} from "my-customhook-collection";
 import CarrouselCourses from './CoursesComponents/CarrouselCourses';
 import CardCourse from './CoursesComponents/CardCourse';
-import {Spin } from 'antd';
+
 
 const CoursesView = () => {
     const db = firebase.firestore();
@@ -13,8 +13,9 @@ const CoursesView = () => {
 
     return (
         <Fragment>
+            <BackTop/>
             <CarrouselCourses />
-           {Data&&<Typography.Title level={1} style={{ marginTop: "50px" }} align="center">Cursos Disponibles ({Data.length})</Typography.Title>}
+           {Data&&<Typography.Title style={{ marginTop: "50px" }} align="center">Cursos Disponibles ({Data.length})</Typography.Title>}
             <div style={{ margin: "50px 40px" }}>
                 <Row gutter={[48, 48]} justify="center" align="middle">
                     {Data?Data.map((elemento) => {

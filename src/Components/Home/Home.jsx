@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import {BackTop} from 'antd';
 import Carrousel from './Carrousel';
 import Entry from './Entry';
 import DogProfiles from './DogProfiles';
@@ -10,6 +11,7 @@ const Home = () => {
     }, [])
     return (
         <Fragment>
+            <BackTop />
             <Carrousel />
             <Entry title="¿ Quienes Somos ?" color="primary" />
             <Entry title="¿ Nuestros Procesos ?" color="white" image="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />

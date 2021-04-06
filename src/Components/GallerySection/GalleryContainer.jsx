@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ModalInfo from "./ModalInfo";
-import { Modal, Spin } from "antd";
+import { Modal, Spin, Typography,BackTop } from "antd";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import BannerGallery from "./BannerGallery";
 const GalleryContainer = () => {
+  const {Title}=Typography;
   const db = firebase.firestore();
   const refColl = db.collection("Galería");
   const [Data] = useOnSnapshotCollection(refColl);
@@ -25,7 +26,10 @@ const GalleryContainer = () => {
 
   return (
     <>
+     <BackTop />
       <BannerGallery />
+      {Data && ((Data.length > 0 ) && <Title  style={{ marginTop: "50px" }} align="center" >Contenido destacado </Title>)}
+      <br/>
       {Data ? (
         Data.length > 0 ? (
           <>

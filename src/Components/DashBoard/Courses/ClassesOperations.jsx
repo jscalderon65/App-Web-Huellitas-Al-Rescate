@@ -7,6 +7,7 @@ import {
   Divider,
   Spin,
   Skeleton,
+  BackTop
 } from "antd";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotDoc } from "my-customhook-collection";
@@ -86,6 +87,8 @@ const ClassesOperations = () => {
   console.log(Data.clases);
 
   return (
+    <>
+    <BackTop/>
     <div className="class-dashboard-container">
       {Data ? (
         <div className="class-dashboard-title">
@@ -115,6 +118,7 @@ const ClassesOperations = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

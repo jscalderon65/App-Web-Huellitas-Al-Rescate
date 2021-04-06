@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Typography } from "antd";
+import { Divider, Typography, BackTop} from "antd";
 import {
   SettingOutlined,
   QuestionCircleOutlined,
@@ -13,6 +13,10 @@ const SecondHome = () => {
   const { Title, Text } = Typography;
   const mediaQuery = useMediaQuery("(max-width: 460px)");
   return (
+    <>
+    
+    
+    <BackTop />
     <div className="animate__animated animate__fadeIn second-home-container ">
       <Title style={{ textAlign: mediaQuery ? "center" : "left" }}>
         Dashboard de configuración <SettingOutlined />
@@ -79,6 +83,7 @@ const SecondHome = () => {
       </Title>
       <Divider />
     </div>
+    </>
   );
 };
 

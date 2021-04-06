@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Spin } from "antd";
+import { Typography, Spin, BackTop } from "antd";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import GalleryCard from "./GalleryCard";
@@ -10,6 +10,8 @@ const GalleryOperations = () => {
   const refColl = db.collection("Galería");
   const [Data] = useOnSnapshotCollection(refColl);
   return (
+    <>
+    <BackTop/>
     <div className="gallery-operations-container animate__animated animate__fadeIn">
       <div className="gallery-operations-creation-zone">
         <Title style={{ textAlign: "center" }} level={3}>
@@ -30,6 +32,7 @@ const GalleryOperations = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

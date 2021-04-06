@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentTable from "./CommentTable";
-import { Typography } from "antd";
+import { Typography, BackTop } from "antd";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 const TablesView = () => {
@@ -25,6 +25,7 @@ const TablesView = () => {
   }, [Data]);
   return (
     <>
+    < BackTop/>
       <div className="comments-dashboard-title animate__animated animate__fadeIn">
         <Typography.Title style={{ textAlign: "center" }} level={3}>
           Configuración de comentarios

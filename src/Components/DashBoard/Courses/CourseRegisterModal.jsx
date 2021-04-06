@@ -199,11 +199,12 @@ const CourseRegisterModal = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              textOverflow: "ellipsis"
             }}
             danger
           >
             <UploadOutlined />
-            {isFile ? file.name : "Escoge una imagen"}
+            {isFile ? (file.name.length>=15?`${file.name.substr(0,15)} ....`:file.name) : "Escoge una imagen"}
           </Button>
           <br />
           {isFile ? (
