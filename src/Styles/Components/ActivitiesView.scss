@@ -34,6 +34,14 @@
   background-color: $secondary;
   padding: 20px;
 }
+.Volver {
+  width: 100%;
+  z-index: 20;
+  font-size: 40px;
+  color: white;
+  background-color: $secondary;
+  padding: 10px;
+}
 .video .siguiente {
   position: absolute;
   right: 10px;

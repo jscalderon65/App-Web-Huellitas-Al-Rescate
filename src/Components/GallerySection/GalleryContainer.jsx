@@ -4,6 +4,7 @@ import { Modal, Spin } from "antd";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import BannerGallery from "./BannerGallery";
 const GalleryContainer = () => {
   const db = firebase.firestore();
   const refColl = db.collection("Galería");
@@ -24,7 +25,7 @@ const GalleryContainer = () => {
 
   return (
     <>
-      <h1>(Aquí va el banner)</h1>
+      <BannerGallery />
       {Data ? (
         Data.length > 0 ? (
           <>

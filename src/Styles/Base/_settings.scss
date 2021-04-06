@@ -9,7 +9,10 @@ $danger: #aa2037;
 $success: #438aa8;
 $transparent: #221d1bcc;
 .bg-secondary {
-  background-color: $secondary;
+  background-color: $secondary !important;
+}
+.bg-primary {
+  background-color: $primary !important;
 }
 .btn-primary {
   background-color: #ffbc49 !important;

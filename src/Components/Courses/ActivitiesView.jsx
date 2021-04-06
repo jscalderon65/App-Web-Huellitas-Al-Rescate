@@ -51,6 +51,7 @@ const ActivitiesView = () => {
   const Course = Data && getCourse(id);
   Course && console.log(Course);
   const { clases, descripcion, fecha, titulo } = Course;
+  console.log(clases)
   return (
     Course && (
       <Fragment>
@@ -60,8 +61,7 @@ const ActivitiesView = () => {
           style={{ margin: "0px 0px 100px 0px" }}
         >
           <Col xs={24} md={17}>
-            <div className="video">
-              <div className="volver">
+          <div className="Volver">
                 <Breadcrumb>
                 <Link to={`/inicio`}>                  
                 <Item className="menu-item-breadcum">
@@ -78,6 +78,7 @@ const ActivitiesView = () => {
                   <Link to={`/cursos/${id}`}><Item className="menu-item-breadcum" >{titulo}</Item></Link>
                 </Breadcrumb>
               </div>
+            <div className="video">
               {actividad === 0 ? (
                 console.log("hola")
               ) : (
@@ -131,7 +132,7 @@ const ActivitiesView = () => {
                 clases.map((elemento) => (
                   <Panel
                     header={elemento.titulo}
-                    key={elemento.titulo}
+                    key={elemento.dateCreation}
                     extra={genExtra()}
                   >
                     <div>{elemento.description}</div>
