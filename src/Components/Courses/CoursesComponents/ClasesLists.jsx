@@ -11,7 +11,7 @@ const ClasesLists = ({ list }) => {
         style={{ height: "auto", padding: "50px 50px", background: "white" }}
       >
         <Col md={20}>
-          <Title>Lista de Clases</Title>
+          <Title>Lista de Clases {list&&`(${list.length})`}</Title>
           <div style={{ marginTop: "50px" }}>
             <Timeline  >
               {list && list.map((e) => <Item color="#ffbc49" key={e.titulo}>{e.titulo}</Item>)}

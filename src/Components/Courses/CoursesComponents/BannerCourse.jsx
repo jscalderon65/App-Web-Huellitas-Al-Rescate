@@ -17,6 +17,7 @@ const BannerCourse = ({
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quos non consequuntur quidem consectetur deserunt dolores ab numquam, pariatur adipisci!",
   img = "https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?cs=srgb&dl=pexels-pixabay-207691.jpg&fm=jpg",
   fecha,
+  clases,
 }) => {
   const { Title, Text } = Typography;
 
@@ -77,28 +78,32 @@ const BannerCourse = ({
               Volver
             </Button>
           </Link>
-            <p  id="copy-text" style={{display:"none"}}>{window.location.href}</p>
-            <Button
-              onClick={()=>copyButton("copy-text")}
-              type="primary"
-              className="btn-secondary"
-              icon={<CopyOutlined />}
-              style={{ marginTop: "20px",marginLeft: "10px"}}
-              danger
-            >
-              Compartir
-            </Button>
+          <p id="copy-text" style={{ display: "none" }}>
+            {window.location.href}
+          </p>
+          <Button
+            onClick={() => copyButton("copy-text")}
+            type="primary"
+            className="btn-secondary"
+            icon={<CopyOutlined />}
+            style={{ marginTop: "20px", marginLeft: "10px" }}
+            danger
+          >
+            Compartir
+          </Button>
 
-          <Link to={`/actividades/${id}`} style={{ marginLeft: "10px" }}>
-            <Button
-              type="primary"
-              className="btn-primary"
-              style={{ marginTop: "20px" }}
-            >
-              Ir al curso
-              <ArrowRightOutlined />
-            </Button>
-          </Link>
+          {clases && clases.length > 0 ? (
+            <Link to={`/actividades/${id}`} style={{ marginLeft: "10px" }}>
+              <Button
+                type="primary"
+                className="btn-primary"
+                style={{ marginTop: "20px" }}
+              >
+                Ir al curso
+                <ArrowRightOutlined />
+              </Button>
+            </Link>
+          ):null}
         </Col>
         <Col xs={24} md={8}>
           <div style={{ height: "300px", background: "white" }}>
@@ -110,9 +115,7 @@ const BannerCourse = ({
                 width: "100%",
                 height: "300px",
               }}
-              >
-
-              </div>
+            ></div>
           </div>
         </Col>
       </Row>

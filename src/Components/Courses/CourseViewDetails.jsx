@@ -39,6 +39,7 @@ const DetallesCourseView = () => {
           title={curso.titulo}
           description={curso.descripcion}
           img={curso.img}
+          clases={curso.clases}
         />  
         
         <ClasesLists list={curso.clases} />

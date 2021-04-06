@@ -4,14 +4,14 @@ const mostrar = () => {
     let tope = document.documentElement.scrollTop;
     for (var j = 0; j < elementoder.length; j++) {
         let altura = elementoder[j].offsetTop;
-        if (altura - 100 < tope) {
-            elementoder[j].style.opacity = 1
-            elementoder[j].classList.add("slideInRight")
+        if (altura - 700 < tope) {
+            elementoder[j].style.opacity = 1;
+            elementoder[j].classList.add("slideInRight");
         }
     }
     for (var i = 0; i < elemento.length; i++) {
         let alturaElemento = elemento[i].offsetTop;
-        if (alturaElemento - 200 < tope) {
+        if (alturaElemento - 700 < tope) {
             elemento[i].style.opacity = 1
             elemento[i].classList.add("slideInLeft")
         }
