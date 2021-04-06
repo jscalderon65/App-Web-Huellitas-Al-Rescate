@@ -11,14 +11,11 @@ import {
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotDoc } from "my-customhook-collection";
 import { useParams } from "react-router-dom";
-import {
-  DeleteOutlined,
-  RollbackOutlined,
-} from "@ant-design/icons";
+import { DeleteOutlined, RollbackOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { deleteClass } from "./FirebaseFunctions/AddClass";
-import AddClassModal from './AddClassModal'
-import EditClassModal from './EditClassModal';
+import AddClassModal from "./AddClassModal";
+import EditClassModal from "./EditClassModal";
 const ClassesOperations = () => {
   const { Title } = Typography;
   const db = firebase.firestore();
@@ -72,7 +69,11 @@ const ClassesOperations = () => {
                       }}
                     />
                   </Popconfirm>
-                  <EditClassModal InfoClass={curr} Data={Data} courseId={courseId}/>
+                  <EditClassModal
+                    InfoClass={curr}
+                    Data={Data}
+                    courseId={courseId}
+                  />
                 </div>
               ),
             },
@@ -100,7 +101,7 @@ const ClassesOperations = () => {
               <RollbackOutlined /> Volver
             </Button>
           </Link>
-          < AddClassModal Data={Data} courseId={courseId}/>
+          <AddClassModal Data={Data} courseId={courseId} />
         </div>
       ) : (
         <Skeleton />

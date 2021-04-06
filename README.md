@@ -1,8 +1,4 @@
-# Validar 404 en la sección de cursos.
-
-# Modal para fotos de la galería.
-
-# Vista para cuando no hay imágenes.
+## Objetivos a realizar:
 
 # Banner en la sección de estudiantes:
 ->Botón de link a facebook de la fundación.
@@ -15,3 +11,13 @@
 # Despliegue en Netlify.
 
 # Entrega de credenciales.
+
+------------------------------------------------------------
+
+## Objetivos realizados:
+
+# Validar 404 en la sección de cursos.
+
+# Modal para fotos de la galería.
+
+# Vista para cuando no hay imágenes.

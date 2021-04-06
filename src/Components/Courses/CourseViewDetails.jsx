@@ -10,7 +10,7 @@ import { useParams } from "react-router";
 import { Col, Row, Typography, Button, Divider } from "antd";
 import BannerCourse from "./CoursesComponents/BannerCourse";
 import ClasesLists from "./CoursesComponents/ClasesLists";
-
+import Course404 from './Course404';
 
 const DetallesCourseView = () => {
   const db = firebase.firestore();
@@ -29,81 +29,81 @@ const DetallesCourseView = () => {
     Data && setCurso(getCourse(id)[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Data]);
+  console.log(curso);
+  return Data && curso ? (
+    <Fragment>
+      <BannerCourse
+        fecha={curso.fecha}
+        id={id}
+        title={curso.titulo}
+        description={curso.descripcion}
+        img={curso.img}
+        clases={curso.clases}
+      />
 
-  return (
-    Data && (
-      <Fragment>
-        <BannerCourse
-          fecha={curso.fecha}
-          id={id}
-          title={curso.titulo}
-          description={curso.descripcion}
-          img={curso.img}
-          clases={curso.clases}
-        />  
-        
-        <ClasesLists list={curso.clases} />
-        <Row
-          justify="center"
-          gutter={[48, 48]}
-          style={{
-            height: "auto",
-            padding: "0px 50px 50px",
-            background: "white",
-          }}
-        >
-          <Col md={20}>
-            <Title>Sección de comentarios</Title>
-            <Divider></Divider>
-            {isOn ? (
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
+      <ClasesLists list={curso.clases} />
+      <Row
+        justify="center"
+        gutter={[48, 48]}
+        style={{
+          height: "auto",
+          padding: "0px 50px 50px",
+          background: "white",
+        }}
+      >
+        <Col md={20}>
+          <Title>Sección de comentarios</Title>
+          <Divider></Divider>
+          {isOn ? (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                style={{ textAlign: "center" }}
+                onClick={logout}
+                type="primary"
+                size="large"
+                danger
               >
-                <Button
-                  style={{ textAlign: "center" }}
-                  onClick={logout}
-                  type="primary"
-                  size="large"
-                  danger
-                >
-                  Cerrar sesión
-                </Button>
-              </div>
-            ) : (
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <Button
-                  style={{ margin: "auto" }}
-                  onClick={UserGoogleAuth}
-                  type="primary"
-                  size="large"
-                  className="btn-primary"
-                >
-                  Entra con Google para comentar
-                </Button>
-              </div>
-            )}
-            <div>
-              {curso.id && (
-                <CommentBoxApp
-                  CollectionName={`${curso.id}`}
-                  firebase={firebase}
-                />
-              )}
+                Cerrar sesión
+              </Button>
             </div>
-          </Col>
-        </Row>
-      </Fragment>
-    )
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                style={{ margin: "auto" }}
+                onClick={UserGoogleAuth}
+                type="primary"
+                size="large"
+                className="btn-primary"
+              >
+                Entra con Google para comentar
+              </Button>
+            </div>
+          )}
+          <div>
+            {curso.id && (
+              <CommentBoxApp
+                CollectionName={`${curso.id}`}
+                firebase={firebase}
+              />
+            )}
+          </div>
+        </Col>
+      </Row>
+    </Fragment>
+  ) : (
+    <Course404 />
   );
 };
 export default DetallesCourseView;
