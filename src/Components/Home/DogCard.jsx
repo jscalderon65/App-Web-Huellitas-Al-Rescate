@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
-import { Image, Typography, Divider, Carousel } from "antd";
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-const useStyles = makeStyles((
-) => ({
-  root: {
-    flexGrow: 1,
-  },
-}));
+import { Image, Typography, Divider } from "antd";
+import ContentModal from "./ContentModal";
+
 const DogCard = ({
   src,
   name,
@@ -57,45 +51,16 @@ const DogCard = ({
               closable={false}
               onCancel={showModal}
               visible={isModalVisible}
-              width="80vw"
+              width="100%"
               style={{borderRadius:"50%"}}
+              bodyStyle={{ padding: "0px",background:"rgba(0,0,0,.2)" }}
             >
-              <div className={useStyles.root}>
-                <Grid container spacing={2} justify="center" alignItems="center" back style={{ borderRadius: "20px" }}>
-                  <Grid item xs={12} md={4}>
-                    <Carousel autoplay style={{ width: "100%" }}>
-                      <div >
-                        <Image
-                          preview={false}
-                          style={{
-                            borderRadius: "20px", width: "100%", height: "auto",
-                            alignItems: "center",
-                            color: "#fff",
-                            lineHeight: "160px",
-                          }}
-                          src={galeryArray[0]}
-                          alt="picsum"
-                        />
-                      </div>
-                      <div>
-                        <Image
-                          preview={false}
-                          style={{
-                            borderRadius: "20px", width: "100%", height: "auto",
-                            color: "#fff",
-                            lineHeight: "160px",
-                          }}
-                          src={galeryArray[1]}
-                          alt="picsum"
-                        />
-                      </div>
-                    </Carousel>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <p>{InternalDescription}</p>
-                  </Grid>
-                </Grid>
-              </div>
+              <ContentModal src={src}
+                name={name}
+                ExternalDescription={ExternalDescription}
+                InternalDescription={InternalDescription}
+                galeryArray={galeryArray}
+                />
             </Modal>
           </div>
         </div>
