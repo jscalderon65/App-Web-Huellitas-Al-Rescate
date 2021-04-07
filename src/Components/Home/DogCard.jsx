@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
-import { Image, Typography, Divider } from "antd";
+import { Typography, Divider } from "antd";
 import ContentModal from "./ContentModal";
 
 const DogCard = ({
@@ -8,7 +8,7 @@ const DogCard = ({
   name,
   ExternalDescription,
   InternalDescription,
-  galeryArray
+  galeryArray,
 }) => {
   const { Title } = Typography;
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -16,10 +16,15 @@ const DogCard = ({
     setIsModalVisible(!isModalVisible);
   };
   return (
-    <div className="dog-card izquierda" >
+    <div className="dog-card izquierda">
       <div className="dog-card-image">
-        <Image
-          style={{ borderRadius: "100%", width: "250px", height: "250px" }}
+        <img
+          style={{
+            borderRadius: "100%",
+            width: "250px",
+            height: "250px",
+            objectFit: "cover",
+          }}
           src={src}
           alt="picsum"
         />
@@ -42,7 +47,7 @@ const DogCard = ({
             onClick={showModal}
           >
             Ver más
-            </Button>
+          </Button>
           <div>
             <Modal
               centered
@@ -51,16 +56,24 @@ const DogCard = ({
               closable={false}
               onCancel={showModal}
               visible={isModalVisible}
-              width="100%"
-              style={{borderRadius:"50%"}}
-              bodyStyle={{ padding: "0px",background:"rgba(0,0,0,.2)" }}
+              width="auto"
+              style={{ background: "rgba(0,0,0,.1)" }}
+              bodyStyle={{
+                padding: "0px",
+                background: "rgba(0,0,0,.1)",
+                marginTop: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
-              <ContentModal src={src}
+              <ContentModal
+                src={src}
                 name={name}
+                showModal={showModal}
                 ExternalDescription={ExternalDescription}
                 InternalDescription={InternalDescription}
                 galeryArray={galeryArray}
-                />
+              />
             </Modal>
           </div>
         </div>

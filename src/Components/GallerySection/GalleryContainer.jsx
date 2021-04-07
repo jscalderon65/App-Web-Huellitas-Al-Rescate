@@ -59,7 +59,7 @@ const GalleryContainer = () => {
               visible={isModalVisible}
               onCancel={handleCancel}
               centered
-              bodyStyle={{ padding: "0px" }}
+              bodyStyle={{ padding: "0px"}}
               width="auto"
             >
               <ModalInfo Data={ModalData} onClose={handleCancel} />
