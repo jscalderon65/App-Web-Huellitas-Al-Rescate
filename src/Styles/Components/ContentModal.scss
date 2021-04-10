@@ -4,6 +4,9 @@
   overflow: hidden;
   box-shadow: 0px 0px 20px #000000b3;
 }
+.image-card-styles{
+  object-fit:cover !important;
+}
 .card-header {
   height: 300px;
   overflow: hidden;

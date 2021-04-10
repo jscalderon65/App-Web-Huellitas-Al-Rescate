@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
-import { Image } from "antd";
 import { Button } from "antd";
 const ContentModal = (props) => {
   return (
     <Fragment>
       <div className="card">
         <div className="card-header">
-          <Image src={props.src} alt="Perro" />
-
+          <img src={props.src} className="image-card-styles" alt="Perro" />
           <div className="name">
             <span className="last">{props.name}</span>
           </div>
