@@ -2,9 +2,9 @@ import React, { Fragment, useState } from "react";
 import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Col, Row, Typography, Tabs, Collapse, Breadcrumb } from "antd";
-import { HomeOutlined, UserOutlined } from '@ant-design/icons'
+import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 import {
   CaretLeftOutlined,
   CaretRightOutlined,
@@ -51,7 +51,7 @@ const ActivitiesView = () => {
   const Course = Data && getCourse(id);
   Course && console.log(Course);
   const { clases, descripcion, fecha, titulo } = Course;
-  console.log(clases)
+  console.log(clases);
   return (
     Course && (
       <Fragment>
@@ -61,23 +61,25 @@ const ActivitiesView = () => {
           style={{ margin: "0px 0px 100px 0px" }}
         >
           <Col xs={24} md={17}>
-          <div className="Volver">
-                <Breadcrumb>
-                <Link to={`/inicio`}>                  
+            <div className="Volver">
+              <Breadcrumb>
                 <Item className="menu-item-breadcum">
-                    <HomeOutlined />
-                    <span>  Inicio</span>
-                  </Item>
-                </Link>
-                  <Link to={`/cursos`}>                    
-                  <Item className="menu-item-breadcum">
-                    <UserOutlined />
-                    <span>  Cursos</span>
-                  </Item>
-                    </Link> 
-                  <Link to={`/cursos/${id}`}><Item className="menu-item-breadcum" >{titulo}</Item></Link>
-                </Breadcrumb>
-              </div>
+                  <Link className="Volver-link" to={`/inicio`}>
+                    
+                    <span> <HomeOutlined /> Inicio</span>
+                  </Link>
+                </Item>
+                <Item className="menu-item-breadcum">
+                  <Link className="Volver-link" to={`/cursos`}>
+                    
+                    <span><UserOutlined /> Cursos</span>
+                  </Link>
+                </Item>
+                <Item className="menu-item-breadcum">
+                  <Link className="Volver-link" to={`/cursos/${id}`}><span>{titulo}</span></Link>
+                </Item>
+              </Breadcrumb>
+            </div>
             <div className="video">
               {actividad === 0 ? (
                 console.log("hola")
@@ -99,14 +101,14 @@ const ActivitiesView = () => {
             <Row justify="center">
               <Col xs={0} md={20}>
                 <Tabs defaultActiveKey="1" onChange={callback}>
-                  <TabPane tab="Descripcion del Curso" key="1">
+                  <TabPane tab="Descripcion del Curso" key="2">
                     <Typography.Title level={3}>{titulo}</Typography.Title>
                     <Typography.Text>{descripcion}</Typography.Text>
                     <Typography.Text>
                       {fecha.seconds + "-" + fecha.nanoseconds}
                     </Typography.Text>
                   </TabPane>
-                  <TabPane tab="Descripcion de Actividad" key="2">
+                  <TabPane tab="Descripcion de Actividad" key="3">
                     <Typography.Title level={3}>
                       {clases[actividad].titulo}
                     </Typography.Title>
@@ -118,21 +120,17 @@ const ActivitiesView = () => {
               </Col>
             </Row>
           </Col>
-          <Col
-            xs={0}
-            md={7}
-            style={{ padding: "10px", minHeight: "100vh" }}
-          >
+          <Col xs={0} md={7} style={{ padding: "10px", minHeight: "100vh" }}>
             <br />
             <Typography.Title align="center" level={3}>
               Lista Actividades
             </Typography.Title>
             <Collapse onChange={callback} expandIconPosition="left">
               {clases &&
-                clases.map((elemento) => (
+                clases.map((elemento, index) => (
                   <Panel
                     header={elemento.titulo}
-                    key={elemento.dateCreation}
+                    key={index}
                     extra={genExtra()}
                   >
                     <div>{elemento.description}</div>
@@ -140,15 +138,15 @@ const ActivitiesView = () => {
                 ))}
             </Collapse>
           </Col>
-          <Col xs={24} md={0} >
-            <Row justify="center" >
+          <Col xs={24} md={0}>
+            <Row justify="center">
               <Col xs={22} md={20}>
-                <Tabs defaultActiveKey="3" onChange={callback}>
-                  <TabPane tab="Descripcion del Curso" key="1">
+                <Tabs defaultActiveKey="5" onChange={callback}>
+                  <TabPane tab="Descripcion del Curso" key="6">
                     <Typography.Title level={3}>{titulo}</Typography.Title>
                     <Typography.Text>{descripcion}</Typography.Text>
                   </TabPane>
-                  <TabPane tab="Descripcion de Actividad" key="2">
+                  <TabPane tab="Descripcion de Actividad" key="7">
                     <Typography.Title level={3}>
                       {clases[actividad].titulo}
                     </Typography.Title>
@@ -156,17 +154,17 @@ const ActivitiesView = () => {
                       {clases[actividad].description}
                     </Typography.Text>
                   </TabPane>
-                  <TabPane tab="Lista Actividades" key="3">
+                  <TabPane tab="Lista Actividades" key="8">
                     <Collapse
                       defaultActiveKey={["1"]}
                       onChange={callback}
                       expandIconPosition="left"
                     >
                       {clases &&
-                        clases.map((elemento) => (
+                        clases.map((elemento, index) => (
                           <Panel
                             header={elemento.titulo}
-                            key={elemento.titulo}
+                            key={index}
                             extra={genExtra()}
                           >
                             <div>{elemento.description}</div>

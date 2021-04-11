@@ -45,7 +45,7 @@ const GalleryContainer = () => {
               >
                 <Masonry gutter="15px" columnsCount={3}>
                   {Data &&
-                    Data.map((item) => (
+                    Data.reverse().map((item) => (
                       <img
                         loading="lazy"
                         src={item.img}

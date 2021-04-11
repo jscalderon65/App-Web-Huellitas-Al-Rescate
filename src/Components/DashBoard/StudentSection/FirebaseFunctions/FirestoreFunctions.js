@@ -6,10 +6,12 @@ const { success, error } = message;
 
 const AddGalleryItem = (description, img, imgName) => {
   moment.locale("es");
+  const creationDate =new Date();
   firebase
     .firestore()
     .collection(`Galería`)
-    .add({
+    .doc(JSON.stringify(creationDate))
+    .set({
       description,
       date: moment().format(
         "[Publicado el día] D[/]MM[/]YYYY [a las]  h:mm:ss a"

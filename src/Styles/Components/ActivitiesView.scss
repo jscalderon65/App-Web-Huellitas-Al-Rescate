@@ -42,6 +42,13 @@
   background-color: $secondary;
   padding: 10px;
 }
+.Volver-link>span{
+  color: white;
+  transition: color .2s;
+}
+.Volver-link>span:hover{
+  color: grey;
+}
 .video .siguiente {
   position: absolute;
   right: 10px;

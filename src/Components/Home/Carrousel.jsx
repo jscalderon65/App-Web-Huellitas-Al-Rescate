@@ -5,7 +5,7 @@ import "rc-banner-anim/assets/index.css";
 const Corrousel = () => {
   const { BgElement } = Element;
   return (
-      <BannerAnim prefixCls="banner-user">
+      <BannerAnim autoPlay={true} prefixCls="banner-user">
         <Element prefixCls="banner-user-elem" key="0">
           <BgElement
             key="bg"

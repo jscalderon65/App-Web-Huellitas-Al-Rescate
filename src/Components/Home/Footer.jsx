@@ -28,13 +28,13 @@ const Footer = () => {
             </Link>
           </li>
           <li className="li-styles">
-            <Link className="a-styles" to="/adopciones">
-              Adopciones
+            <Link className="a-styles" to="/estudiantes">
+              Estudiantes
             </Link>
           </li>
           <li className="li-styles">
-            <Link className="a-styles" to="/estudiantes">
-              Estudiantes
+            <Link className="a-styles" to="/cursos">
+              Cursos
             </Link>
           </li>
         </ul>
@@ -92,11 +92,12 @@ const Footer = () => {
         </Title>
         <div className="contact-item">
           <PushpinOutlined style={{ fontSize: "30px" }} />
-          calle 80 c sur #78-20
+          Cl. 81a Sur #6 Este40, Bogotá
         </div>
         <br />
+
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15906.596930896832!2d-74.0652613!3d4.656487499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1615434516632!5m2!1ses!2sco"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.4863325411843!2d-74.10510848523846!3d4.505982896725914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3fa3cafb0a19f9%3A0x8ca4c6c77e58d3ab!2sColegio%20Ofelia%20Uribe%20de%20Acosta!5e0!3m2!1ses-419!2sco!4v1618180171690!5m2!1ses-419!2sco"
           title="maps"
           className="map-styles"
           loading="lazy"

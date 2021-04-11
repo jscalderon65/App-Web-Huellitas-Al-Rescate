@@ -16,14 +16,9 @@ const ContentModal = (props) => {
             <p>
               {props.InternalDescription}
             </p>
-
             <div className="item">
               <span className="word">Edad</span>
               <span className="caract">12</span>
-            </div>
-            <div className="item">
-              <span className="word">Raza</span>
-              <span className="caract">Criollo</span>
             </div>
             <Button onClick={props.showModal} size="large" className="salirbtn">
               Cerrar

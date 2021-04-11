@@ -38,7 +38,7 @@ const DogCard = ({
         <br />
         <div style={{ textAlign: "center" }}>
           <p style={{ textAlign: "center", margin: "auto" }}>
-            <b>{ExternalDescription}</b>
+            <b>{`${InternalDescription.substr(0,200)} ...`}</b>
           </p>
           <br />
           <Button
