@@ -1,3 +1,6 @@
+body,html{
+  background-color: #F0F2F5;
+}
 .gallery-container {
   margin: 20px;
   height: auto;
@@ -8,10 +11,9 @@
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  background: $success;
-}
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+ }
 .gallery__img {
   width: 100%;
   margin: auto;

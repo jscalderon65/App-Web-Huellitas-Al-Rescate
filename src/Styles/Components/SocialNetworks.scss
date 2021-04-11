@@ -63,3 +63,23 @@
 .social-networks-section-container>div:hover{
     transform: translateX(-10px);
 }
+.info-home-modal-container{
+    width: 50vw;
+    display: grid;
+    grid-template-rows: auto 100px;
+    grid-gap:10px;
+}
+@media(max-width:460px){
+    .info-home-modal-container{
+        width: 100%;
+    }  
+}
+.info-home-modal-container>div:nth-child(1){
+    margin-top:20px;
+    padding:10px;
+}
+.info-home-modal-container>div:nth-child(2){
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}

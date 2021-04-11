@@ -7,13 +7,26 @@ import {
   CaretRightOutlined,
   CaretLeftOutlined,
 } from "@ant-design/icons";
-import { BackTop, Affix, Tooltip } from "antd";
+import { BackTop, Affix, Tooltip, Modal,Typography,Divider } from "antd";
 import { useMediaQuery } from "my-customhook-collection";
 import Carrousel from "./Carrousel";
 import Entry from "./Entry";
 import DogProfiles from "./DogProfiles";
 import mostrar from "../../Animated";
 const Home = () => {
+
+  const {Title,Text} =Typography;
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   const mediaQuery = useMediaQuery("(max-width: 460px)");
   const [socialNetworks, SetsocialNetworks] = useState(mediaQuery);
   const socialNetworksChange = () => {
@@ -65,13 +78,7 @@ const Home = () => {
               <YoutubeOutlined style={{ fontSize: "40px" }} />
             </div>
             <Tooltip placement="leftTop" title={"Información"}>
-              <div
-                onClick={() =>
-                  OpenPage(
-                    "https://www.youtube.com/watch?v=-zgDXIi1uYw&list=RDMMAYVIZZZwsBw&index=7"
-                  )
-                }
-              >
+              <div onClick={showModal}>
                 <InfoCircleOutlined style={{ fontSize: "40px" }} />
               </div>
             </Tooltip>
@@ -96,6 +103,41 @@ const Home = () => {
         image="https://images.pexels.com/photos/59523/pexels-photo-59523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
       />
       <DogProfiles />
+      <Modal
+        centered
+        title={null}
+        closable={false}
+        footer={null}
+        onCancel={handleCancel}
+        visible={isModalVisible}
+        width="auto"
+        bodyStyle={{
+          padding:"0px"
+        }}
+      >
+        <div className="info-home-modal-container">
+        <div>
+        <Title level={3} align="center">Acerca del proyecto</Title>
+        <Divider/>
+        <div style={{textAlign: 'justify',padding:"10px"}}>
+        <Text strong>
+        Esta aplicación web fue desarrollada por estudiantes de ingeniería de sistemas y computación de la universidad Católica de Colombia, con el fin de apoyar el proyecto escolar y ambiental "Huellitas al rescate" del colegio Ofelia Uribe de Acosta.
+        <br/>
+        <br/>
+        Los repositorios de GitHub de los estudiantes encargados del proyecto se encuentran en el footer de la página, todos los derechos reservados 2021.
+        </Text>
+        </div>
+        </div>
+          <div>
+        <img
+          src="https://biblioteca.ucatolica.edu.co/ucatolica/images/logo-ucatolica.svg"
+          alt="ucatolica"
+          width="200px"
+          height= "50px"
+        ></img>
+          </div>
+        </div>
+      </Modal>
     </Fragment>
   );
 };

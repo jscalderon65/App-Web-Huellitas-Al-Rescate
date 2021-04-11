@@ -1,6 +1,8 @@
 ## Objetivos a realizar:
 
-# Modal de perfil de los perros.
+# Cambiar a fondos blancos en el dashboard.
+
+# Cuadrar colores en los banner.
 
 # Recolección de información para la página.
 
@@ -18,4 +20,6 @@
 
 # Vista para cuando no hay imágenes.
 
-# Banner en la sección de estudiantes:
+# Banner en la sección de estudiantes.
+
+# Modal de perfil de los perros.

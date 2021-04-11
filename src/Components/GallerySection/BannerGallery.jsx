@@ -20,7 +20,7 @@ const BannerGallery = () => {
         />
         <div
           className="banner-anim-elem-content"
-          style={{ background: "rgba(77,125,145,0.9)" }}
+          style={{ background: "#f19e18" }}
         >
           <TweenOne
             className="banner-user-title"
@@ -48,9 +48,10 @@ const BannerGallery = () => {
             backgroundPositionY: "20%",
           }}
         />
+
         <div
           className="banner-anim-elem-content "
-          style={{  background: "rgba(77,125,145,0.9)" }}
+          style={{  background: "#f19e18" }}
         >
           <TweenOne
             className="banner-user-title"

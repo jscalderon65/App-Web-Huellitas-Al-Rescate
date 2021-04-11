@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ModalInfo from "./ModalInfo";
-import { Modal, Spin, Typography,BackTop } from "antd";
+import { Modal, Spin, Typography, BackTop, Empty } from "antd";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import BannerGallery from "./BannerGallery";
 const GalleryContainer = () => {
-  const {Title}=Typography;
+  const { Title } = Typography;
   const db = firebase.firestore();
   const refColl = db.collection("Galería");
   const [Data] = useOnSnapshotCollection(refColl);
@@ -26,14 +26,19 @@ const GalleryContainer = () => {
 
   return (
     <>
-     <BackTop />
+      <BackTop />
       <BannerGallery />
-      {Data && ((Data.length > 0 ) && <Title  style={{ marginTop: "50px" }} align="center" >Contenido destacado </Title>)}
-      <br/>
+      <br />
       {Data ? (
         Data.length > 0 ? (
           <>
             <div className="gallery-container">
+              <Title
+                style={{ marginTop: "50px", marginBottom: "40px" }}
+                align="center"
+              >
+                Contenido destacado
+              </Title>
               <ResponsiveMasonry
                 className="masonry"
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
@@ -42,6 +47,7 @@ const GalleryContainer = () => {
                   {Data &&
                     Data.map((item) => (
                       <img
+                        loading="lazy"
                         src={item.img}
                         key={item.imgName}
                         alt={item.imgName}
@@ -59,13 +65,23 @@ const GalleryContainer = () => {
               visible={isModalVisible}
               onCancel={handleCancel}
               centered
-              bodyStyle={{ padding: "0px"}}
+              bodyStyle={{ padding: "0px" }}
               width="auto"
             >
               <ModalInfo Data={ModalData} onClose={handleCancel} />
             </Modal>
           </>
-        ) : null
+        ) : (
+          <div style={{ background: "white", margin: "20px", padding: "20px",boxShadow:"2px 2px 10px rgba(0,0,0,.2)" }}>
+            <Title
+              style={{ marginTop: "30px", marginBottom: "40px" }}
+              align="center"
+            >
+              Contenido destacado
+            </Title>
+            <Empty />
+          </div>
+        )
       ) : (
         <div className="gallery-wait">
           <Spin size="large" />

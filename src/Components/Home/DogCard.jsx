@@ -20,6 +20,7 @@ const DogCard = ({
       <div className="dog-card-image">
         <img
           style={{
+            boxShadow:" 2px 2px 10px rgba(0,0,0,.2)",
             borderRadius: "100%",
             width: "250px",
             height: "250px",
