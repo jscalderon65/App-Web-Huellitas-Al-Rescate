@@ -9,7 +9,7 @@ const MainRouter = () => {
   return (
     <BrowserRouter>
       <div>
-        {isOn && isOn.email === "huellitasparasiempreprae@gmail.com" ? (
+        {isOn && isOn.email === "huellitasalrescateprae@gmail.com" ? (
           <PrivateSwitch UserInfo={isOn} />
         ) : (
           <PublicSwitch />

@@ -76,11 +76,11 @@ const Home = () => {
             <div
               onClick={() =>
                 OpenPage(
-                  "https://www.youtube.com/watch?v=-zgDXIi1uYw&list=RDMMAYVIZZZwsBw&index=7"
+                  "https://www.youtube.com/channel/UClKOpjDAxpXgxnNEyaO2adw"
                 )
               }
             >
-              <YoutubeOutlined style={{ fontSize: "40px" }} />
+              <YoutubeOutlined  style={{ fontSize: "40px" }} />
             </div>
             <Tooltip placement="leftTop" title={"Información"}>
               <div onClick={showModal}>

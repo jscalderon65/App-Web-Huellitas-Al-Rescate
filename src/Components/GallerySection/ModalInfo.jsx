@@ -19,7 +19,9 @@ const ModalInfo = ({ Data, onClose }) => {
         </div>
         <Divider />
         <div className="modal-gallery-description">
-          <Title level={4}>{Data.description}</Title>
+          <Title style={{
+            wordBreak: "break-all"
+          }} level={4}>{Data.description}</Title>
         </div>
         <br />
         <div className="modal-gallery-buttons">
