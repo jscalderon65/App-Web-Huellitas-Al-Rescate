@@ -6,14 +6,13 @@
 
 # Recolección de información para la página.
 
-# Despliegue en Netlify.
-
 # Entrega de credenciales.
 
 ------------------------------------------------------------
 
 ## Objetivos realizados:
 
+# Despliegue en Netlify.
 # Validar 404 en la sección de cursos.
 
 # Modal para fotos de la galería.

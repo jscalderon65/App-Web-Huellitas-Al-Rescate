@@ -31,9 +31,9 @@ const CoursesDashBoard = () => {
     <>
     
     <BackTop />
-    <div className="animate__animated animate__fadeIn courses-dashboard-container">
-      <div className="courses-dashboard-new-course-container">
-          <Typography.Title style={{textAlign: "center"}} level={3}>Configuración de Cursos</Typography.Title>
+    <div className="animate__animated animate__fadeIn courses-dashboard-container" >
+      <div className="courses-dashboard-new-course-container" style={{background:"white"}} >
+          <Typography.Title style={{textAlign: "center",marginTop:"50px"}} level={3}>Configuración de Cursos</Typography.Title>
         <form onSubmit={handleSearch}>
           <Input
             suffix={suffix}
@@ -63,7 +63,7 @@ const CoursesDashBoard = () => {
         </div>
       </div>
       {Data ? (
-        <div className="courses-dashboard-card-container">
+        <div className="courses-dashboard-card-container" style={{background:"white",padding:"100px 0px"}}>
           {searchText === ""
             ? Data.map((course) => <CourseCard key={course.id} {...course} />)
             : CoursesFiltered.map((course) => (

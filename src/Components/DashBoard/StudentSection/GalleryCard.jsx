@@ -12,7 +12,7 @@ const GalleryCard = ({Data}) => {
         });
     }
     return (
-        <div className="animate__animated animate__fadeIn gallery-card">
+        <div className="animate__animated animate__fadeIn gallery-card"  style={{background:"white"}}>
             <Image src={Data.img} 
             className="animate__animated animate__fadeIn gallery-card-img"
             alt={Data.imgName}/>

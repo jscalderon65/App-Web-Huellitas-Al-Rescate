@@ -7,15 +7,20 @@ import {
   CaretRightOutlined,
   CaretLeftOutlined,
 } from "@ant-design/icons";
-import { BackTop, Affix, Tooltip, Modal,Typography,Divider } from "antd";
+import { BackTop, Affix, Tooltip, Modal, Typography, Divider } from "antd";
 import { useMediaQuery } from "my-customhook-collection";
 import Carrousel from "./Carrousel";
 import Entry from "./Entry";
 import DogProfiles from "./DogProfiles";
 import mostrar from "../../Animated";
+const descripcion = [
+  { somos: "Somos un Proyecto ambiental escolar que tiene como objetivo generar un proceso de aprendizaje desde la acción, para fortalecer la empatía y el cuidado sobre las relaciones con otras especies animales, entendiendo las relaciones del ser humano como ser de la naturaleza en la comunidad educativa, donde los estudiantes son agentes multiplicadores de la información en sus diferentes ámbitos personales, familiares y sociales; y así se evidencie su papel como actores sociales activos de la comunidad. " },
+  { somos: "Se gestó desde inicio de año un proyecto con la colaboración del área de humanidades, el proyecto de biblioteca, y Huellitas al Rescate donde a través de la lectoescritura se acercaba a los niños a las bibliotecas, a la lectura, y con la excusa de nuestras mascotas Ofelia, Manchas y Paloma se realiza un curso de dibujo desde cuentos que sensibilicen a los niños sobre la relación entre humanos y otros animales" },
+  { somos: "El Instituto de Protección y Bienestar Animal brinda su apoyo al proyecto, con la capacitación de voluntariado para los estudiantes sobre tenencia responsable, capacitación para adultos de marco legal, se solicitó hacer una jornada de esterilización con chip en el sector. " },
+]
 const Home = () => {
 
-  const {Title,Text} =Typography;
+  const { Title, Text } = Typography;
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -91,16 +96,23 @@ const Home = () => {
         )}
       </Affix>
       <Carrousel />
-      <Entry title="¿ Quienes Somos ?" color="primary" />
+      <Entry
+        title="¿ Quienes Somos ?"
+        color="primary"
+        image="../../Fotos/Somos.png"
+        description={descripcion[0].somos}
+      />
       <Entry
         title="¿ Nuestros Procesos ?"
         color="white"
-        image="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        image="../../Fotos/Procesos.png"
+        description={descripcion[1].somos}
       />
       <Entry
-        title="¿ Como lo Hacemos ?"
+        title="Nuestros aliados"
         color="secondary"
-        image="https://images.pexels.com/photos/59523/pexels-photo-59523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        image="../../Fotos/Aliados.svg"
+        description={descripcion[2].somos}
       />
       <DogProfiles />
       <Modal
@@ -112,29 +124,29 @@ const Home = () => {
         visible={isModalVisible}
         width="auto"
         bodyStyle={{
-          padding:"0px"
+          padding: "0px"
         }}
       >
         <div className="info-home-modal-container">
-        <div>
-        <Title level={3} align="center">Acerca del proyecto</Title>
-        <Divider/>
-        <div style={{textAlign: 'justify',padding:"10px"}}>
-        <Text strong>
-        Esta aplicación web fue desarrollada por estudiantes de ingeniería de sistemas y computación de la universidad Católica de Colombia, con el fin de apoyar el proyecto escolar y ambiental "Huellitas al rescate" del colegio Ofelia Uribe de Acosta.
-        <br/>
-        <br/>
+          <div>
+            <Title level={3} align="center">Acerca del proyecto</Title>
+            <Divider />
+            <div style={{ textAlign: 'justify', padding: "10px" }}>
+              <Text strong>
+                Esta aplicación web fue desarrollada por estudiantes de ingeniería de sistemas y computación de la universidad Católica de Colombia, con el fin de apoyar el proyecto escolar y ambiental "Huellitas al rescate" del colegio Ofelia Uribe de Acosta.
+        <br />
+                <br />
         Los repositorios de GitHub de los estudiantes encargados del proyecto se encuentran en el footer de la página, todos los derechos reservados 2021.
         </Text>
-        </div>
-        </div>
+            </div>
+          </div>
           <div>
-        <img
-          src="https://biblioteca.ucatolica.edu.co/ucatolica/images/logo-ucatolica.svg"
-          alt="ucatolica"
-          width="200px"
-          height= "50px"
-        ></img>
+            <img
+              src="https://biblioteca.ucatolica.edu.co/ucatolica/images/logo-ucatolica.svg"
+              alt="ucatolica"
+              width="200px"
+              height="50px"
+            ></img>
           </div>
         </div>
       </Modal>

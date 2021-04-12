@@ -25,13 +25,13 @@ const Entry = ({
               </strong>
             </Col>
             <Col md={18}>
-              <p>{description}</p>
+              <p style={{fontWeight:"900"}}>{description}</p>
             </Col>
           </Row>
         </Col>
         <Col xs={24} md={12} className="derecha">
           <div className="marco">
-            <Image src={image} width="100%" alt={title} />
+            <Image src={image} width="100%" style={{maxHeight:"400px",objectFit:"cover"}} alt={title} />
           </div>
         </Col>
       </Row>

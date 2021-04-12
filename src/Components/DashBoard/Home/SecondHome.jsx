@@ -17,7 +17,7 @@ const SecondHome = () => {
     
     
     <BackTop />
-    <div className="animate__animated animate__fadeIn second-home-container ">
+    <div className="animate__animated animate__fadeIn second-home-container " style={{background:"white"}}>
       <Title style={{ textAlign: mediaQuery ? "center" : "left" }}>
         Dashboard de configuración <SettingOutlined />
       </Title>

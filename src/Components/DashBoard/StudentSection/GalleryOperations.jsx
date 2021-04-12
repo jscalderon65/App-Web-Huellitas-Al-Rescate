@@ -12,8 +12,8 @@ const GalleryOperations = () => {
   return (
     <>
     <BackTop/>
-    <div className="gallery-operations-container animate__animated animate__fadeIn">
-      <div className="gallery-operations-creation-zone">
+    <div className="gallery-operations-container animate__animated animate__fadeIn" >
+      <div className="gallery-operations-creation-zone"  style={{background:"white"}}>
         <Title style={{ textAlign: "center" }} level={3}>
           Configuración de contenido multimedia
         </Title>
@@ -21,7 +21,7 @@ const GalleryOperations = () => {
         <Title level={3}>Imágenes {Data&&`(${Data.length})`}</Title>
       </div>
       {Data ? (
-        <div className="gallery-operations-cards-container">
+        <div className="gallery-operations-cards-container"  style={{background:"white"}}>
           {Data.map((item) => (
             <GalleryCard key={item.id} Data={item} />
           ))}

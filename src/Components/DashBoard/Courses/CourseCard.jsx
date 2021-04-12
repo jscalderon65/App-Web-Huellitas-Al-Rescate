@@ -11,7 +11,7 @@ const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
   const refColl = db.collection(id);
   const [Data] = useOnSnapshotCollection(refColl);
   return (
-    <div className="animate__animated animate__fadeIn courses-dashboard-card">
+    <div className="animate__animated animate__fadeIn courses-dashboard-card" style={{background:"white"}}>
       <div style={{alignSelf:"center"}}>
         <Image  className="animate__animated animate__fadeIn courses-dashboard-card-img" src={img} alt={titulo} />
       </div>
