@@ -10,7 +10,7 @@ import { useParams } from "react-router";
 import { Col, Row, Typography, Button, Divider } from "antd";
 import BannerCourse from "./CoursesComponents/BannerCourse";
 import ClasesLists from "./CoursesComponents/ClasesLists";
-import Course404 from './Course404';
+import Course404 from "./Course404";
 
 const DetallesCourseView = () => {
   const db = firebase.firestore();
@@ -43,16 +43,15 @@ const DetallesCourseView = () => {
 
       <ClasesLists list={curso.clases} />
       <Row
-        justify="center"
-        gutter={[48, 48]}
         style={{
           height: "auto",
-          padding: "0px 50px 50px",
+          display: "flex",
+          justifyContent: "center",
           background: "white",
         }}
       >
-        <Col md={20}>
-          <Title>Sección de comentarios</Title>
+        <Col md={24}>
+          <Title align="center">Sección de comentarios</Title>
           <Divider></Divider>
           {isOn ? (
             <div
@@ -91,7 +90,12 @@ const DetallesCourseView = () => {
               </Button>
             </div>
           )}
-          <div>
+          <div
+            style={{
+              width: "90vw",
+              margin: "auto",
+            }}
+          >
             {curso.id && (
               <CommentBoxApp
                 CollectionName={`${curso.id}`}
