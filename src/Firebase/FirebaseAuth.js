@@ -17,7 +17,7 @@ const UserGoogleAuth =()=>{
 const googleAuth = () => {
   logout();
   let provider_Google = new firebase.auth.GoogleAuthProvider();
-  const AdminEmail = "huellitasparasiempreprae@gmail.com";
+  const AdminEmail = "huellitasalrescateprae@gmail.com";
   firebase
     .auth()
     .signInWithPopup(provider_Google)
