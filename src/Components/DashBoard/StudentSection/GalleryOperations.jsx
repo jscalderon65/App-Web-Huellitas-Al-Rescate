@@ -22,7 +22,7 @@ const GalleryOperations = () => {
       </div>
       {Data ? (
         <div className="gallery-operations-cards-container"  style={{background:"white"}}>
-          {Data.map((item) => (
+          {Data.reverse().map((item) => (
             <GalleryCard key={item.id} Data={item} />
           ))}
         </div>
