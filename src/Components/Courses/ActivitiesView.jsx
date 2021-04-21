@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { Link } from "react-router-dom";
-import { Col, Row, Typography, Tabs, Collapse, Breadcrumb } from "antd";
+import { Col, Row, Typography, Tabs, Collapse, Breadcrumb, Spin } from "antd";
 import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 import {
   CaretLeftOutlined,
@@ -32,7 +32,6 @@ const ActivitiesView = () => {
   const genExtra = () => (
     <SettingOutlined
       onClick={(event) => {
-        // If you don't want click extra trigger collapse, you can prevent this:
         event.stopPropagation();
       }}
     />
@@ -53,7 +52,7 @@ const ActivitiesView = () => {
   const { clases, descripcion, fecha, titulo } = Course;
   console.log(clases);
   return (
-    Course && (
+    Course? (
       <Fragment>
         <Row
           gutter={[0, 0]}
@@ -65,18 +64,28 @@ const ActivitiesView = () => {
               <Breadcrumb>
                 <Item className="menu-item-breadcum">
                   <Link className="Volver-link" to={`/inicio`}>
-                    
-                    <span> <HomeOutlined /> Inicio</span>
+                    <span>
+                      <HomeOutlined /> Inicio
+                    </span>
                   </Link>
                 </Item>
                 <Item className="menu-item-breadcum">
                   <Link className="Volver-link" to={`/cursos`}>
-                    
-                    <span><UserOutlined /> Cursos</span>
+                    <span>
+                      <UserOutlined /> Cursos
+                    </span>
                   </Link>
                 </Item>
                 <Item className="menu-item-breadcum">
-                  <Link className="Volver-link" to={`/cursos/${id}`}><span>{titulo}</span></Link>
+                  <Link className="Volver-link" to={`/cursos/${id}`}>
+                    <span>
+                      {titulo
+                        ? titulo.length >= 22
+                          ? `${titulo.substr(0, 22)} ....`
+                          : titulo
+                        : null}
+                    </span>
+                  </Link>
                 </Item>
               </Breadcrumb>
             </div>
@@ -121,6 +130,8 @@ const ActivitiesView = () => {
             </Row>
           </Col>
           <Col xs={0} md={7} style={{ padding: "10px", minHeight: "100vh" }}>
+            <br />
+            <br />
             <br />
             <Typography.Title align="center" level={3}>
               Lista Actividades
@@ -178,7 +189,9 @@ const ActivitiesView = () => {
           </Col>
         </Row>
       </Fragment>
-    )
+    ):<div className="gallery-wait-courses">
+    <Spin size="large" />
+  </div>
   );
 };
 

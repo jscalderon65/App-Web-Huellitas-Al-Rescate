@@ -1,6 +1,7 @@
 import React, { Fragment} from "react";
 import { NavLink, Link } from "react-router-dom";
-const NavBar = ({ history }) => {
+const NavBar = () => {
+
   const add = () => {
     const m = document.getElementById("m");
     const n = document.getElementById("n");
@@ -19,21 +20,21 @@ const NavBar = ({ history }) => {
           <ul>
             <li>
               <strong>
-                <NavLink to="/inicio" activeClassName="active">
+                <NavLink onClick={add} to="/inicio" activeClassName="active">
                   INICIO
                 </NavLink>
               </strong>
             </li>
             <li>
               <strong>
-                <NavLink to="/estudiantes" activeClassName="active">
+                <NavLink onClick={add} to="/estudiantes" activeClassName="active">
                   ESTUDIANTES
                 </NavLink>
               </strong>
             </li>
             <li>
               <strong>
-                <NavLink to="/cursos" activeClassName="active">
+                <NavLink onClick={add} to="/cursos" activeClassName="active">
                   CURSOS
                 </NavLink>
               </strong>

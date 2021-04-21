@@ -41,9 +41,9 @@ const GalleryContainer = () => {
               </Title>
               <ResponsiveMasonry
                 className="masonry"
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+                columnsCountBreakPoints={{ 350: 1,500:2, 750: 3, 900: 4 }}
               >
-                <Masonry gutter="15px" columnsCount={3}>
+                <Masonry gutter="15px" columnsCount={4}>
                   {Data &&
                     Data.reverse().map((item) => (
                       <img

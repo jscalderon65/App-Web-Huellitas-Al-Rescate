@@ -13,7 +13,8 @@ const Corrousel = () => {
             style={{
               backgroundImage: `url("https://images.pexels.com/photos/850602/pexels-photo-850602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940ss")`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "50% 50%",
             }}
           />
           <div className="banner-anim-elem-content">
@@ -43,7 +44,8 @@ const Corrousel = () => {
             style={{
               backgroundImage: `url("https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "50% 50%",
             }}
           />
           <div className="banner-anim-elem-content">

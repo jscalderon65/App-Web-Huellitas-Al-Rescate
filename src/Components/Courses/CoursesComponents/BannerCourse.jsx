@@ -111,7 +111,8 @@ const BannerCourse = ({
               style={{
                 backgroundImage: `url(${img})`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "50% 50%",
                 width: "100%",
                 height: "300px",
               }}

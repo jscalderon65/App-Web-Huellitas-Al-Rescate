@@ -35,12 +35,20 @@
   padding: 20px;
 }
 .Volver {
-  width: 100%;
+  width: 100vw;
+  height:60px;
+  display: flex;
+  align-items: center;
   z-index: 20;
   font-size: 40px;
   color: white;
   background-color: $secondary;
   padding: 10px;
+}
+@media(max-width:350px){
+  .Volver {
+    width: 100%;
+  }
 }
 .Volver-link>span{
   color: white;

@@ -14,8 +14,9 @@ const CorrouselCourses = () => {
           className="bg"
           style={{
             backgroundImage: `url("https://images.pexels.com/photos/4143791/pexels-photo-4143791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`,
-            backgroundSize: "cover",
-            backgroundPositionY: "20%",
+            backgroundSize: "cover",            
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "50% 50%",
           }}
         />
         <div className="banner-anim-elem-content" style={{background:"#f7b749CC"}}>
@@ -25,7 +26,7 @@ const CorrouselCourses = () => {
           >
             <b>
               <i>
-                "Aprende la tenencia de animales responsable "
+                "Aprende la tenencia de animales responsable"
               </i>
             </b>
           </TweenOne>
@@ -44,7 +45,8 @@ const CorrouselCourses = () => {
           style={{
             backgroundImage: `url("https://images.pexels.com/photos/6146984/pexels-photo-6146984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`,
             backgroundSize: "cover",
-            backgroundPositionY: "20%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "50% 50%",
           }}
         />
         <div className="banner-anim-elem-content " style={{background:"#f7b749CC"}}>
