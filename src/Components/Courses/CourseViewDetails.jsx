@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { UserGoogleAuth, logout } from "../../Firebase/FirebaseAuth";
 import { CommentBoxApp } from "my-comment-box-app";
+import { animateScroll as scroll} from "react-scroll";
 import {
   useFirebaseUser,
   useOnSnapshotCollection,
@@ -12,7 +13,13 @@ import BannerCourse from "./CoursesComponents/BannerCourse";
 import ClasesLists from "./CoursesComponents/ClasesLists";
 import Course404 from "./Course404";
 
-const DetallesCourseView = () => {
+const DetallesCourseView = () => {  
+  const scrollType = {
+  duration: 500,
+  delay: 100,
+  smooth: true,  
+  offset: -10,
+};
   const db = firebase.firestore();
   const refColl = db.collection("Cursos");
   const [Data] = useOnSnapshotCollection(refColl);
@@ -29,6 +36,9 @@ const DetallesCourseView = () => {
     Data && setCurso(getCourse(id)[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Data]);
+  useEffect(() => {
+    scroll.scrollToTop(scrollType);
+  }, []);
   console.log(curso);
   return Data && curso ? (
     <Fragment>

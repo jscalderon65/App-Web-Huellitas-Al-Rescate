@@ -1,5 +1,6 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import { Divider, Typography, BackTop} from "antd";
+import { animateScroll as scroll} from "react-scroll";
 import {
   SettingOutlined,
   QuestionCircleOutlined,
@@ -11,11 +12,18 @@ import { useMediaQuery } from "my-customhook-collection";
 
 const SecondHome = () => {
   const { Title, Text } = Typography;
+  const scrollType = {
+    duration: 500,
+    delay: 50,
+    smooth: true, // linear “easeInQuint” “easeOutCubic” 
+    offset: -10,
+ };
   const mediaQuery = useMediaQuery("(max-width: 460px)");
+  useEffect(() => {
+    scroll.scrollToTop(scrollType);
+  }, []);
   return (
     <>
-    
-    
     <BackTop />
     <div className="animate__animated animate__fadeIn second-home-container " style={{background:"white"}}>
       <Title style={{ textAlign: mediaQuery ? "center" : "left" }}>

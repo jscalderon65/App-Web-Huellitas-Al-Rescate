@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState,useEffect } from "react";
 import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
@@ -11,10 +11,17 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import getYouTubeID from "get-youtube-id";
+import { animateScroll as scroll} from "react-scroll";
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
 const { Item } = Breadcrumb;
 const ActivitiesView = () => {
+  const scrollType = {
+    duration: 500,
+    delay: 100,
+    smooth: true,  
+    offset: -10,
+  };
   const { id } = useParams();
   const db = firebase.firestore();
   const refColl = db.collection("Cursos");
@@ -36,6 +43,9 @@ const ActivitiesView = () => {
       }}
     />
   );
+  useEffect(() => {
+    scroll.scrollToTop(scrollType);
+  }, []);
   const getCourse = (id) => {
     const [Course] = Data.filter((e) => (e.id === id ? e : false));
     return Course;
@@ -57,6 +67,7 @@ const ActivitiesView = () => {
         <Row
           gutter={[0, 0]}
           justify="center"
+          className="animate__animated animate__fadeIn"
           style={{ margin: "0px 0px 100px 0px" }}
         >
           <Col xs={24} md={17}>
@@ -109,20 +120,20 @@ const ActivitiesView = () => {
             </div>
             <Row justify="center">
               <Col xs={0} md={20}>
-                <Tabs defaultActiveKey="1" onChange={callback}>
-                  <TabPane tab="Descripcion del Curso" key="2">
-                    <Typography.Title level={3}>{titulo}</Typography.Title>
-                    <Typography.Text>{descripcion}</Typography.Text>
-                    <Typography.Text>
-                      {fecha.seconds + "-" + fecha.nanoseconds}
-                    </Typography.Text>
-                  </TabPane>
+                <Tabs defaultActiveKey="3" onChange={callback}>
                   <TabPane tab="Descripcion de Actividad" key="3">
                     <Typography.Title level={3}>
                       {clases[actividad].titulo}
                     </Typography.Title>
                     <Typography.Text>
                       {clases[actividad].description}
+                    </Typography.Text>
+                  </TabPane>
+                  <TabPane tab="Descripcion del Curso" key="2">
+                    <Typography.Title level={3}>{titulo}</Typography.Title>
+                    <Typography.Text>{descripcion}</Typography.Text>
+                    <Typography.Text>
+                      {fecha.seconds + "-" + fecha.nanoseconds}
                     </Typography.Text>
                   </TabPane>
                 </Tabs>
@@ -153,17 +164,17 @@ const ActivitiesView = () => {
             <Row justify="center">
               <Col xs={22} md={20}>
                 <Tabs defaultActiveKey="5" onChange={callback}>
-                  <TabPane tab="Descripcion del Curso" key="6">
-                    <Typography.Title level={3}>{titulo}</Typography.Title>
-                    <Typography.Text>{descripcion}</Typography.Text>
-                  </TabPane>
-                  <TabPane tab="Descripcion de Actividad" key="7">
+                  <TabPane tab="Descripcion de Actividad" key="5">
                     <Typography.Title level={3}>
                       {clases[actividad].titulo}
                     </Typography.Title>
                     <Typography.Text>
                       {clases[actividad].description}
                     </Typography.Text>
+                  </TabPane>
+                  <TabPane tab="Descripcion del Curso" key="6">
+                    <Typography.Title level={3}>{titulo}</Typography.Title>
+                    <Typography.Text>{descripcion}</Typography.Text>
                   </TabPane>
                   <TabPane tab="Lista Actividades" key="8">
                     <Collapse
@@ -182,8 +193,10 @@ const ActivitiesView = () => {
                           </Panel>
                         ))}
                     </Collapse>
+
                   </TabPane>
                 </Tabs>
+                <br/>
               </Col>
             </Row>
           </Col>

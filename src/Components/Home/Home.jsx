@@ -42,9 +42,9 @@ const Home = () => {
   };
 
   const mediaQuery = useMediaQuery("(max-width: 460px)");
-  const [socialNetworks, SetsocialNetworks] = useState(mediaQuery);
+  const [socialNetworks, SetSocialNetworks] = useState(mediaQuery);
   const socialNetworksChange = () => {
-    SetsocialNetworks(!socialNetworks);
+    SetSocialNetworks(!socialNetworks);
   };
   useEffect(() => {
     window.addEventListener("scroll", mostrar);
@@ -54,8 +54,7 @@ const Home = () => {
   };
   return (
     <Fragment>
-      <BackTop />
-      <Affix style={{ position: "absolute" }} offsetTop={50}>
+      <Affix offsetTop={120}>
         {socialNetworks ? (
           <Tooltip placement="leftTop" title={"Redes sociales"}>
             <div
@@ -104,6 +103,7 @@ const Home = () => {
           </div>
         )}
       </Affix>
+      <BackTop />
       <Carrousel />
       <Entry
         title="¿ Quienes Somos ?"

@@ -37,11 +37,11 @@ const BannerCourse = ({
     <Fragment>
       <Row
         justify="center"
-        className="bg-secondary"
+        className="bg-secondary animate__animated animate__fadeIn"
         gutter={[48, 48]}
         style={{ height: "auto", padding: "100px 50px" }}
       >
-        <Col xs={24} md={12} className="izquierda">
+        <Col xs={24} md={12} className="izquierda animate__animated animate__fadeIn">
           <Breadcrumb>
             <Breadcrumb.Item className="menu-item-breadcum" href="/inicio">
               <HomeOutlined />
