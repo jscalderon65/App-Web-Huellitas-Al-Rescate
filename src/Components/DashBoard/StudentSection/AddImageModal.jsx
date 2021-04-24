@@ -90,9 +90,7 @@ const AddImageModal = () => {
             onChange={onChangeExample}
             name="description"
             placeholder="Descripción de la imagen"
-            maxLength={120}
-            minLength={20}
-            value={description}
+            value={description.substr(0,120)}
             autoComplete="off"
             size="large"
             showCount

@@ -1,5 +1,13 @@
 import React, { Fragment, useEffect } from "react";
-import { Button, Col, Row, Typography, Breadcrumb, message } from "antd";
+import {
+  Button,
+  Col,
+  Row,
+  Typography,
+  Breadcrumb,
+  message,
+  Tooltip,
+} from "antd";
 import { Link } from "react-router-dom";
 import {
   ClockCircleOutlined,
@@ -41,7 +49,11 @@ const BannerCourse = ({
         gutter={[48, 48]}
         style={{ height: "auto", padding: "100px 50px" }}
       >
-        <Col xs={24} md={12} className="izquierda animate__animated animate__fadeIn">
+        <Col
+          xs={24}
+          md={12}
+          className="izquierda animate__animated animate__fadeIn"
+        >
           <Breadcrumb>
             <Breadcrumb.Item className="menu-item-breadcum" href="/inicio">
               <HomeOutlined />
@@ -52,7 +64,13 @@ const BannerCourse = ({
               <span> Cursos</span>
             </Breadcrumb.Item>
             <Breadcrumb.Item className="menu-item-breadcum">
-              {title}
+              <Tooltip placement="top" title={title}>
+                {title
+                  ? title.length >= 22
+                    ? `${title.substr(0, 22)} ....`
+                    : title
+                  : null}
+              </Tooltip>
             </Breadcrumb.Item>
           </Breadcrumb>
           <br />
@@ -103,7 +121,7 @@ const BannerCourse = ({
                 <ArrowRightOutlined />
               </Button>
             </Link>
-          ):null}
+          ) : null}
         </Col>
         <Col xs={24} md={8}>
           <div style={{ height: "300px", background: "white" }}>

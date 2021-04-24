@@ -52,8 +52,8 @@ const CommentTable = ({ collection = "comments", title }) => {
             ...prev,
             {
               key: curr.id,
-              name: curr.userInfo.displayName,
-              content: curr.CommentContent,
+              name:curr.userInfo.displayName,
+              content: <p style={{wordBreak:"break-all"}}>{curr.CommentContent}</p>,
               action: (
                 <Popconfirm
                   title={"¿Deseas eliminar de forma permanente este comentario?"}
@@ -82,11 +82,12 @@ const CommentTable = ({ collection = "comments", title }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Data]);
   return (
+
     <div>
       {Data ? (
         <div className="comments-dashboard-table animate__animated animate__fadeIn">
-          <Typography.Title style={{ textAlign: "left" }} level={3}>
-            Comentarios de ( {title.trim()} )
+          <Typography.Title style={{ textAlign: "left" }} level={4}>
+            Comentarios de ( {title} )
           </Typography.Title>
           <Divider />
           <Table columns={columns} dataSource={newData} size="small" />

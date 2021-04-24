@@ -124,7 +124,7 @@ const EditCourseModal = ({ Data }) => {
             onChange={onChangeExample}
             name="title"
             value={title}
-            maxLength={20}
+            maxLength={50}
             minLength={20}
             placeholder="Título"
             autoComplete="off"
@@ -136,13 +136,13 @@ const EditCourseModal = ({ Data }) => {
             onChange={onChangeExample}
             name="description"
             placeholder="Descripción del curso"
-            maxLength={120}
-            minLength={20}
-            value={description}
+            maxLength={150}            
             autoComplete="off"
             size="large"
-            showCount
             required
+            value={description.substr(0,150)}
+            style={{width:"100%"}}
+            showCount
           />
 
           {title !== Data.titulo || description !== Data.descripcion ? (

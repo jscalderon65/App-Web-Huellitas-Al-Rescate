@@ -51,13 +51,15 @@ const AddClassModal = ({ Data, courseId }) => {
       <Modal
         title={null}
         footer={null}
-        closable={false}
+        closable={true}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         width="auto"
         centered
       >
+        <br/>
+        <br/>
         <form
           className="class-dashboard-modal-form"
           onSubmit={(e) => {
@@ -75,7 +77,7 @@ const AddClassModal = ({ Data, courseId }) => {
           value={title}
           onChange={onChangeInput}
           minLength={10}
-          maxLength={24}
+          maxLength={50}
           required
           />
           <Input 
@@ -90,12 +92,13 @@ const AddClassModal = ({ Data, courseId }) => {
           placeholder="Descripción"
           autoComplete="off"
           name="description"
-          value={description}
+          maxLength={150}        
+          value={description.substr(0,150)}
           onChange={onChangeInput}
-          maxLength={120}
-          minLength={20}
           size="large"
           required
+          style={{width:"100%"}}
+          showCount
           />
           <Button 
           type="primary" 

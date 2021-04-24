@@ -1,6 +1,6 @@
 import React from "react";
 import { firebase } from "../../../Firebase/FirebaseConfig";
-import { Image, Button, Popconfirm, Tooltip} from "antd";
+import { Image, Button, Popconfirm, Tooltip } from "antd";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { deleteCourse } from "./FirebaseFunctions/AddCourse";
 import { Link } from "react-router-dom";
@@ -11,12 +11,27 @@ const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
   const refColl = db.collection(id);
   const [Data] = useOnSnapshotCollection(refColl);
   return (
-    <div className="animate__animated animate__fadeIn courses-dashboard-card" style={{background:"white"}}>
-      <div style={{alignSelf:"center"}}>
-        <Image  className="animate__animated animate__fadeIn courses-dashboard-card-img" src={img} alt={titulo} />
+    <div
+      className="animate__animated animate__fadeIn courses-dashboard-card"
+      style={{ background: "white" }}
+    >
+      <div style={{ alignSelf: "center" }}>
+        <Image
+          className="animate__animated animate__fadeIn courses-dashboard-card-img"
+          src={img}
+          alt={titulo}
+        />
       </div>
       <div className="courses-dashboard-card-title">
-        <h3>{titulo}</h3>
+        <Tooltip placement="top" title={titulo}>
+          <h3>
+            {titulo
+              ? titulo.length >= 20
+                ? `${titulo.substr(0, 20)} ....`
+                : titulo
+              : null}
+          </h3>
+        </Tooltip>
       </div>
       <div className="courses-dashboard-card-actions">
         {Data && (
@@ -33,13 +48,15 @@ const CourseCard = ({ titulo, img, id, imgName, clases, descripcion }) => {
               </Button>
             </Popconfirm>
             <Tooltip placement="top" title={"Configuración de clases"}>
-            <Link to={`/dashboard/cursos/${id}`}>
-              <Button className="button-add" size="large">
-                <FolderAddOutlined />({clases.length})
-              </Button>
-            </Link>
+              <Link to={`/dashboard/cursos/${id}`}>
+                <Button className="button-add" size="large">
+                  <FolderAddOutlined />({clases.length})
+                </Button>
+              </Link>
             </Tooltip>
-            <EditCourseModal Data={{ titulo, img, id, imgName, clases,descripcion }} />
+            <EditCourseModal
+              Data={{ titulo, img, id, imgName, clases, descripcion }}
+            />
           </>
         )}
       </div>

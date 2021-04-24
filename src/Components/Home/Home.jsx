@@ -127,13 +127,13 @@ const Home = () => {
       <Modal
         centered
         title={null}
-        closable={false}
+        closable={true}
         footer={null}
         onCancel={handleCancel}
         visible={isModalVisible}
         width="auto"
         bodyStyle={{
-          padding: "0px",
+          paddingTop: "10px",
         }}
       >
         <div className="info-home-modal-container">

@@ -43,7 +43,7 @@ const ClassesOperations = () => {
           return [
             ...prev,
             {
-              title: <p>{curr.titulo}</p>,
+              title: <p style={{wordBreak:"break-all"}}>{curr.titulo}</p>,
               key: curr.DateCreation,
               options: (
                 <div className="class-dashboard-buttons-table">
@@ -91,7 +91,7 @@ const ClassesOperations = () => {
     <BackTop/>
     <div className="class-dashboard-container">
       {Data ? (
-        <div className="class-dashboard-title">
+        <div  style={{wordBreak:"break-all"}} className="class-dashboard-title">
           <Title level={4}>Actividades de ( {Data.titulo.trim()} )</Title>
         </div>
       ) : (

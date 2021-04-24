@@ -123,7 +123,7 @@ const CourseRegisterModal = () => {
             onChange={onChangeExample}
             name="title"
             value={title}
-            maxLength={20}
+            maxLength={50}
             minLength={20}
             placeholder="Título"
             autoComplete="off"
@@ -132,14 +132,12 @@ const CourseRegisterModal = () => {
           />
 
           <br />
-
           <Input.TextArea
             onChange={onChangeExample}
             name="description"
             placeholder="Descripción del curso"
-            maxLength={120}
-            minLength={20}
-            value={description}
+            maxLength={150}        
+            value={description.substr(0,150)}
             autoComplete="off"
             size="large"
             showCount
