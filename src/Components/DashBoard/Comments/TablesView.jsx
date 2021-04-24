@@ -3,7 +3,14 @@ import CommentTable from "./CommentTable";
 import { Typography, BackTop } from "antd";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotCollection } from "my-customhook-collection";
+import { animateScroll as scroll} from "react-scroll";
 const TablesView = () => {
+  const scrollType = {
+    duration: 500,
+    delay: 50,
+    smooth: true, // linear “easeInQuint” “easeOutCubic” 
+    offset: -10,
+ };
   const db = firebase.firestore();
   const refColl = db.collection("Cursos");
   const [Data] = useOnSnapshotCollection(refColl);
@@ -23,6 +30,9 @@ const TablesView = () => {
         )
       );
   }, [Data]);
+  useEffect(() => {
+    scroll.scrollToTop(scrollType);
+  }, []);
   return (
     <>
     < BackTop/>

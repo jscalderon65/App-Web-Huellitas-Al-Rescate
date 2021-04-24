@@ -84,6 +84,7 @@ const EditClassModal = ({ InfoClass, Data, courseId }) => {
             value={YoutubeUrl}
             onChange={onChangeInput}
             minLength={23}
+            required
           />
           <Input.TextArea
             placeholder="Descripción"

@@ -9,6 +9,7 @@ import {
   Skeleton,
   BackTop
 } from "antd";
+import { animateScroll as scroll} from "react-scroll";
 import { firebase } from "../../../Firebase/FirebaseConfig";
 import { useOnSnapshotDoc } from "my-customhook-collection";
 import { useParams } from "react-router-dom";
@@ -18,6 +19,12 @@ import { deleteClass } from "./FirebaseFunctions/AddClass";
 import AddClassModal from "./AddClassModal";
 import EditClassModal from "./EditClassModal";
 const ClassesOperations = () => {
+  const scrollType = {
+    duration: 500,
+    delay: 50,
+    smooth: true, // linear “easeInQuint” “easeOutCubic” 
+    offset: -10,
+ };
   const { Title } = Typography;
   const db = firebase.firestore();
   const { courseId } = useParams();
@@ -35,7 +42,9 @@ const ClassesOperations = () => {
       dataIndex: "options",
     },
   ];
-
+  useEffect(() => {
+    scroll.scrollToTop(scrollType);
+  }, []);
   useEffect(() => {
     Data &&
       setDataInfo(

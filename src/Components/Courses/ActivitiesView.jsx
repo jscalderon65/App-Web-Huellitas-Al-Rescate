@@ -1,4 +1,4 @@
-import React, { Fragment, useState,useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useOnSnapshotCollection } from "my-customhook-collection";
 import { firebase } from "../../Firebase/FirebaseConfig";
@@ -11,7 +11,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import getYouTubeID from "get-youtube-id";
-import { animateScroll as scroll} from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
 const { Item } = Breadcrumb;
@@ -19,7 +19,7 @@ const ActivitiesView = () => {
   const scrollType = {
     duration: 500,
     delay: 100,
-    smooth: true,  
+    smooth: true,
     offset: -10,
   };
   const { id } = useParams();
@@ -61,150 +61,159 @@ const ActivitiesView = () => {
   Course && console.log(Course);
   const { clases, descripcion, fecha, titulo } = Course;
   console.log(clases);
-  return (
-    Course? (
-      <Fragment>
-        <Row
-          gutter={[0, 0]}
-          justify="center"
-          className="animate__animated animate__fadeIn"
-          style={{ margin: "0px 0px 100px 0px" }}
-        >
-          <Col xs={24} md={17}>
-            <div className="Volver">
-              <Breadcrumb>
-                <Item className="menu-item-breadcum">
-                  <Link className="Volver-link" to={`/inicio`}>
-                    <span>
-                      <HomeOutlined /> Inicio
-                    </span>
-                  </Link>
-                </Item>
-                <Item className="menu-item-breadcum">
-                  <Link className="Volver-link" to={`/cursos`}>
-                    <span>
-                      <UserOutlined /> Cursos
-                    </span>
-                  </Link>
-                </Item>
-                <Item className="menu-item-breadcum">
-                  <Link className="Volver-link" to={`/cursos/${id}`}>
-                    <span>
-                      {titulo
-                        ? titulo.length >= 22
-                          ? `${titulo.substr(0, 22)} ....`
-                          : titulo
-                        : null}
-                    </span>
-                  </Link>
-                </Item>
-              </Breadcrumb>
-            </div>
-            <div className="video">
-              {actividad === 0 ? (
-                console.log("hola")
-              ) : (
-                <CaretLeftOutlined onClick={anterior} className="anterior" />
-              )}
-              <iframe
-                src={url(clases[actividad].YoutubeUrl)}
-                title={clases[actividad].titulo}
-                frameBorder="0"
-                allowFullScreen
-              />
-              {actividad === clases.length - 1 ? (
-                console.log("hola")
-              ) : (
-                <CaretRightOutlined onClick={siguiente} className="siguiente" />
-              )}
-            </div>
-            <Row justify="center">
-              <Col xs={0} md={20}>
-                <Tabs defaultActiveKey="3" onChange={callback}>
-                  <TabPane tab="Descripcion de Actividad" key="3">
-                    <Typography.Title level={3}>
-                      {clases[actividad].titulo}
-                    </Typography.Title>
-                    <Typography.Text>
-                      {clases[actividad].description}
-                    </Typography.Text>
-                  </TabPane>
-                  <TabPane tab="Descripcion del Curso" key="2">
-                    <Typography.Title level={3}>{titulo}</Typography.Title>
-                    <Typography.Text>{descripcion}</Typography.Text>
-                    <Typography.Text>
-                      {fecha.seconds + "-" + fecha.nanoseconds}
-                    </Typography.Text>
-                  </TabPane>
-                </Tabs>
-              </Col>
-            </Row>
-          </Col>
-          <Col xs={0} md={7} style={{ padding: "10px", minHeight: "100vh" }}>
-            <br />
-            <br />
-            <br />
-            <Typography.Title align="center" level={3}>
-              Lista Actividades
-            </Typography.Title>
-            <Collapse onChange={callback} expandIconPosition="left">
-              {clases &&
-                clases.map((elemento, index) => (
-                  <Panel
-                    header={elemento.titulo}
-                    key={index}
-                    extra={genExtra()}
+  return Course ? (
+    <Fragment>
+      <Row
+        gutter={[0, 0]}
+        justify="center"
+        className="animate__animated animate__fadeIn"
+        style={{ margin: "0px 0px 100px 0px" }}
+      >
+        <Col xs={24} md={17}>
+          <div className="Volver">
+            <Breadcrumb>
+              <Item className="menu-item-breadcum">
+                <Link className="Volver-link" to={`/inicio`}>
+                  <span>
+                    <HomeOutlined /> Inicio
+                  </span>
+                </Link>
+              </Item>
+              <Item className="menu-item-breadcum">
+                <Link className="Volver-link" to={`/cursos`}>
+                  <span>
+                    <UserOutlined /> Cursos
+                  </span>
+                </Link>
+              </Item>
+              <Item className="menu-item-breadcum">
+                <Link className="Volver-link" to={`/cursos/${id}`}>
+                  <span>
+                    {titulo
+                      ? titulo.length >= 22
+                        ? `${titulo.substr(0, 22)} ....`
+                        : titulo
+                      : null}
+                  </span>
+                </Link>
+              </Item>
+            </Breadcrumb>
+          </div>
+          <div className="video">
+            {actividad === 0 ? (
+              console.log("hola")
+            ) : (
+              <CaretLeftOutlined onClick={anterior} className="anterior" />
+            )}
+            <iframe
+              src={url(clases[actividad].YoutubeUrl)}
+              title={clases[actividad].titulo}
+              frameBorder="0"
+              allowFullScreen
+            />
+            {actividad === clases.length - 1 ? (
+              console.log("hola")
+            ) : (
+              <CaretRightOutlined onClick={siguiente} className="siguiente" />
+            )}
+          </div>
+          <Row justify="center">
+            <Col xs={0} md={20}>
+              <Tabs defaultActiveKey="3" onChange={callback}>
+                <TabPane tab="Descripcion de Actividad" key="3">
+                  <Typography.Title level={3}>
+                    {clases[actividad].titulo}
+                  </Typography.Title>
+                  <Typography.Text>
+                    {clases[actividad].description}
+                  </Typography.Text>
+                </TabPane>
+                <TabPane tab="Descripcion del Curso" key="2">
+                  <Typography.Title level={3}>{titulo}</Typography.Title>
+                  <Typography.Text>{descripcion}</Typography.Text>
+                  <Typography.Text>
+                    {fecha.seconds + "-" + fecha.nanoseconds}
+                  </Typography.Text>
+                </TabPane>
+              </Tabs>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={0} md={7} style={{ padding: "10px", minHeight: "100vh" }}>
+          <br />
+          <br />
+          <br />
+          <Typography.Title align="center" level={3}>
+            Lista Actividades
+          </Typography.Title>
+          <Collapse onChange={callback} expandIconPosition="left">
+            {clases &&
+              clases.map((elemento, index) => (
+                <Panel
+                  header={
+                    <p style={{ wordBreak: "break-all" }}>{elemento.titulo}</p>
+                  }
+                  key={index}
+                  extra={genExtra()}
+                >
+                  <div style={{ wordBreak: "break-all" }}>
+                    {elemento.description}
+                  </div>
+                </Panel>
+              ))}
+          </Collapse>
+        </Col>
+        <Col xs={24} md={0}>
+          <Row justify="center">
+            <Col xs={22} md={20}>
+              <Tabs defaultActiveKey="5" onChange={callback}>
+                <TabPane tab="Descripcion de Actividad" key="5">
+                  <Typography.Title level={3}>
+                    {clases[actividad].titulo}
+                  </Typography.Title>
+                  <Typography.Text>
+                    {clases[actividad].description}
+                  </Typography.Text>
+                </TabPane>
+                <TabPane tab="Descripcion del Curso" key="6">
+                  <Typography.Title level={3}>{titulo}</Typography.Title>
+                  <Typography.Text>{descripcion}</Typography.Text>
+                </TabPane>
+                <TabPane tab="Lista Actividades" key="8">
+                  <Collapse
+                    defaultActiveKey={["1"]}
+                    onChange={callback}
+                    expandIconPosition="left"
                   >
-                    <div>{elemento.description}</div>
-                  </Panel>
-                ))}
-            </Collapse>
-          </Col>
-          <Col xs={24} md={0}>
-            <Row justify="center">
-              <Col xs={22} md={20}>
-                <Tabs defaultActiveKey="5" onChange={callback}>
-                  <TabPane tab="Descripcion de Actividad" key="5">
-                    <Typography.Title level={3}>
-                      {clases[actividad].titulo}
-                    </Typography.Title>
-                    <Typography.Text>
-                      {clases[actividad].description}
-                    </Typography.Text>
-                  </TabPane>
-                  <TabPane tab="Descripcion del Curso" key="6">
-                    <Typography.Title level={3}>{titulo}</Typography.Title>
-                    <Typography.Text>{descripcion}</Typography.Text>
-                  </TabPane>
-                  <TabPane tab="Lista Actividades" key="8">
-                    <Collapse
-                      defaultActiveKey={["1"]}
-                      onChange={callback}
-                      expandIconPosition="left"
-                    >
-                      {clases &&
-                        clases.map((elemento, index) => (
-                          <Panel
-                            header={elemento.titulo}
-                            key={index}
-                            extra={genExtra()}
-                          >
-                            <div>{elemento.description}</div>
-                          </Panel>
-                        ))}
-                    </Collapse>
-
-                  </TabPane>
-                </Tabs>
-                <br/>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Fragment>
-    ):<div className="gallery-wait-courses">
-    <Spin size="large" />
-  </div>
+                    {clases &&
+                      clases.map((elemento, index) => (
+                        <Panel
+                          header={
+                            <p style={{ wordBreak: "break-all" }}>
+                              {elemento.titulo}
+                            </p>
+                          }
+                          key={index}
+                          extra={genExtra()}
+                        >
+                          <div style={{ wordBreak: "break-all" }}>
+                            {elemento.description}
+                          </div>
+                        </Panel>
+                      ))}
+                  </Collapse>
+                </TabPane>
+              </Tabs>
+              <br />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Fragment>
+  ) : (
+    <div className="gallery-wait-courses">
+      <Spin size="large" />
+    </div>
   );
 };
 

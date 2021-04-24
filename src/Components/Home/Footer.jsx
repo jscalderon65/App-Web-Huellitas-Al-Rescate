@@ -3,7 +3,6 @@ import { googleAuth } from "../../Firebase/FirebaseAuth";
 import { Link } from "react-router-dom";
 import {
   FacebookOutlined,
-  InstagramOutlined,
   WhatsAppOutlined,
   MailOutlined,
   YoutubeOutlined,
