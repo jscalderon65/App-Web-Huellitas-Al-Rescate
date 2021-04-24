@@ -151,9 +151,9 @@ const Home = () => {
                 Acosta.
                 <br />
                 <br />
-                Los repositorios de GitHub de los estudiantes encargados del
+{/*                 Los repositorios de GitHub de los estudiantes encargados del
                 proyecto se encuentran en el footer de la página, todos los
-                derechos reservados 2021.
+                derechos reservados 2021. */}
               </Text>
             </div>
           </div>
