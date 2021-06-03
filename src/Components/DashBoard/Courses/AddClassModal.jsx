@@ -10,7 +10,7 @@ const AddClassModal = ({ Data, courseId }) => {
     title:"",
     YoutubeUrl:"",
     description:""
-  })  
+  });  
   const AddNewClass = () => {
     const DateCreation = JSON.stringify(new Date());
     console.log(Data);

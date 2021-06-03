@@ -4,12 +4,13 @@ import PrivateSwitch from "./PrivateSwitch";
 import { firebase } from "../../Firebase/FirebaseConfig";
 import { useFirebaseUser } from "my-customhook-collection";
 import { BrowserRouter } from "react-router-dom";
+import { AdminEmails } from '../../Admin/AdminEmails';
 const MainRouter = () => {
   const [isOn] = useFirebaseUser(firebase);
   return (
     <BrowserRouter>
       <div>
-        {isOn && isOn.email === "huellitasalrescateprae@gmail.com" ? (
+        {isOn && (AdminEmails.includes(isOn.email)) ? (
           <PrivateSwitch UserInfo={isOn} />
         ) : (
           <PublicSwitch />
