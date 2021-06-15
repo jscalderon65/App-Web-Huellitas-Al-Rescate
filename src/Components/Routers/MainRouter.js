@@ -13,7 +13,7 @@ const MainRouter = () => {
         {isOn && (AdminEmails.includes(isOn.email)) ? (
           <PrivateSwitch UserInfo={isOn} />
         ) : (
-          <PublicSwitch />
+          <PublicSwitch firebase={firebase}/>
         )}
       </div>
     </BrowserRouter>

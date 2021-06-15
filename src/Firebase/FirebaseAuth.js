@@ -27,7 +27,8 @@ const googleAuth = () => {
         logout();
       } else {
         success(`Se ha iniciado sesión`);
-        console.log(JSON.stringify(user));
+        firebase.analytics().logEvent(`Inicio de sesión en el dashboard (${user.email})`);
+        /* console.log(JSON.stringify(user)); */
       }
     })
     .catch(() => {

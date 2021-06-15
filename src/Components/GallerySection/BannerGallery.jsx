@@ -4,7 +4,6 @@ import TweenOne from "rc-tween-one";
 import "rc-banner-anim/assets/index.css";
 
 const { BgElement } = Element;
-
 const BannerGallery = () => {
   return (
     <BannerAnim autoPlay={true}  style={{ height: "80vh"}} id="courses">
@@ -13,7 +12,7 @@ const BannerGallery = () => {
           key="bg"
           className="bg"
           style={{
-            backgroundImage: `url("https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/56922877_430144877819319_2693063014214533120_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=7WCtmpN0334AX8wDUXC&_nc_ht=scontent-bog1-1.xx&oh=c2e4863653fb632d31c45956a804980f&oe=6099CDDA")`,
+            backgroundImage: `url("../Fotos/HuellitasDibujo.jpg")`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "50% 50%",
@@ -44,7 +43,7 @@ const BannerGallery = () => {
           key="bg"
           className="bg"
           style={{
-            backgroundImage: `url("https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/153593197_1021006142066520_2985457074584178695_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=e3f864&_nc_ohc=8_gi8yMlRQkAX-Qf_O0&_nc_ht=scontent-bog1-1.xx&oh=1e28586f7c63579c9491b87c3f89d5f0&oe=6092DADA")`,
+            backgroundImage: `url("../Fotos/HuellitasDibujo2.jpg")`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "50% 50%",

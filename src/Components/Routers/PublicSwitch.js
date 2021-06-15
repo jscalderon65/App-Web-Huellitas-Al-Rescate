@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Footer, NavBar, Home, CoursesView, CourseViewDetails, ActivitiesView, GalleryContainer } from '../index.js';
 
-const PublicSwitch = () => {
+const PublicSwitch = ({firebase}) => {
+  firebase.analytics().logEvent('Nuevo visitante');
   return (
     <Fragment>
       <NavBar />

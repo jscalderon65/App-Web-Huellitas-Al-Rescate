@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
+import "firebase/analytics";
 firebase.initializeApp({
   apiKey: "AIzaSyBx1EKctVjc19HsM_fi24UZfFjMjsndhTI",
   authDomain: "huellitasparasiempre-ed7e4.firebaseapp.com",
@@ -11,4 +12,5 @@ firebase.initializeApp({
   appId: "1:565121270196:web:2959efafbc6d1891b4b2e1",
   measurementId: "G-KH8ZZ4M4CX",
 });
+firebase.analytics();
 export { firebase };
