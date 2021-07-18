@@ -1,12 +1,13 @@
 # Proyecto Huellitas al rescate del colegio Ofelia Uribe de Acosta de Bogotá D.C.
 
 ## Acerca del proyecto 📖:
-
 _Huellitas al rescate es un proyecto ambiental escolar que tiene como objetivo generar un proceso de aprendizaje desde la acción, para fortalecer la empatía y el cuidado sobre las relaciones con otras especies animales, entendiendo las relaciones del ser humano como ser de la naturaleza en la comunidad educativa, donde los estudiantes son agentes multiplicadores de la información en sus diferentes ámbitos personales, familiares y sociales; y así se evidencie su papel como actores sociales activos de la comunidad._
 
 ## Sobre la aplicación web 📄:
-
 _Esta aplicación web fue desarrollada con el fin de apoyar las operaciones del proyecto de huellitas al rescate y creada por estudiantes de ingeniería de sistemas y computación de la universidad católica de Colombia._
+<div  align="center" >
+<img align="center"  alt="GIF" src="https://github.com/jscalderon65/App-Web-Huellitas-al-rescate/blob/master/img/Huellitas%20al%20rescate.gif" width="500"/>
+</div>
 
 ## Construido con 🛠️:
 
